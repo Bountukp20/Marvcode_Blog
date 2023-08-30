@@ -4,7 +4,7 @@ from .models import *
 # Create your views here.
 
 def home(request):
-    return render(request, 'blog/home.html')
+    return render(request, 'blog/index.html')
 
 def articles(request):
     HTML_Topics = Html.objects.all()
