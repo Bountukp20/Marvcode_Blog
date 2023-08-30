@@ -1,0 +1,357 @@
+{% extends "base.html" %}
+{% load static %}
+{% comment %} {% load socialaccount %} {% endcomment %}
+
+{% block css_files %}
+    <link rel="icon" href="{% static "justLap_main\images\JustLap Business Icon.jpg" type="image/png" sizes="27x27" %}">
+    <script src="https://kit.fontawesome.com/0a96adf822.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="{% static "blog/index.css" %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+{% endblock %}
+
+{% block title %}
+    MarvCode Blog
+{% endblock %}
+
+{% block content %}
+{% comment %} <section class="testim" id="testim">
+    <div class="wrap">
+        <span id="right-arrow" class="arrow right fa fa-chevron-right"></span>
+        <span id="left-arrow" class="arrow left fa fa-chevron-left"></span>
+        <ul class="dots" id="testim-dots">
+            <li class="dot active"></li>
+            <li class="dot"></li>
+            <li class="dot"></li>
+            <li class="dot"></li>
+        </ul>
+
+        <div class="cont" id="testim-content">
+
+            <div class="active">
+                <div class="img">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSSNf3VUotvTd_DKQsG6EEOcYCzMSzIF_eP6w&usqp=CAU" alt="" class="my-pic">
+                </div>
+            </div>
+
+            <div>
+                <div class="img">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSSNf3VUotvTd_DKQsG6EEOcYCzMSzIF_eP6w&usqp=CAU">
+                </div>
+            </div>
+
+            <div>
+                <div class="img">
+                    <img src="Images/Eating Pastries.jpg">
+                </div>
+            </div>
+
+            <div>
+                <div class="img">
+                    <img src="Images/Best price.jpg">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<script>
+    // vars
+    'use strict'
+    var testim = document.getElementById("testim"),
+    testimDots = Array.prototype.slice.call(document.getElementById("testim-dots").children),
+    testimContent = Array.prototype.slice.call(document.getElementById("testim-content").children),
+    testimleftArrow = document.getElementById("left-arrow"),
+    testimRightArrow = document.getElementById("right-arrow"),
+    testimSpeed = 4500,
+    currentSlide = 0,
+    currentActive = 0,
+    testimTimer
+    ;
+    window.onload = function () {
+
+        // Testim Script
+        function playSlide(slide) {
+            for (var k = 0; k < testimDots.length; k++) {
+                testimContent[k].classList.remove("active");
+                testimContent[k].classList.remove("inactive");
+                testimDots[k].classList.remove("active");
+            }
+            if (slide < 0) {
+                slide = currentSlide = testimContent.length - 1;
+            }
+            if (slide > testimContent.length - 1) {
+                slide = currentSlide = 0;
+            }
+            if (currentActive != currentSlide) {
+                testimContent[currentActive].classList.add("inactive");
+            }
+            testimContent[slide].classList.add("active");
+            testimDots[slide].classList.add("active");
+
+            currentActive = currentSlide;
+
+            clearTimeout(testimTimer);
+            testimTimer = setTimeout(function () {
+                playSlide(currentSlide += 1);
+            }, testimSpeed)
+        }
+        // coding with nick
+        testimleftArrow.addEventListener("click", function () {
+            playSlide(currentSlide -= 1);
+        })
+        testimRightArrow.addEventListener("click", function () {
+            playSlide(currentSlide += 1);
+        })
+
+        for (var l = 0; l < testimDots.length; l++) {
+            testimDots[l].addEventListener("click", function () {
+                playSlide(currentSlide = testimDots.indexOf(this));
+            })
+        }
+        playSlide(currentSlide);
+
+    }
+</script> {% endcomment %}
+<div class="nav">
+    <nav>
+        <div class="toggle-button" onclick="nav(this)" id="navy">
+            <div class="bar1"></div>
+            <div class="bar2"></div>
+        </div>
+        <script>
+            function nav(x){
+              x.classList.toggle("change");
+              var x = document.getElementById('nav');
+              if (x.style.display == 'block') {
+                x.style.display = 'none';
+              }
+              else {
+                x.style.display = 'block';
+              }
+            }
+        </script>
+        <ul id="nav">
+            <li>
+                <a href="" class="active">Home</a>
+            </li>
+            <li class="dropbtn" id="myBtn">More<i class="fa fa-chevron-down" aria-hidden="true"></i></li>
+            <ul id="myDropdown" class="dropdown-content">
+                <li>
+                    <a href="#Vid" class="drop-link">Videos</a>
+                </li>
+                <li><a href="https://bountukp20.github.io/marvcode/index.html" class="drop-link" target="_blank">Portfolio</a></li>
+                <li><a href="#article" class="drop-link">Articles</a></li>
+            </ul>
+        </ul>
+    </nav>
+</div>
+<script>
+    // Get the button, and when the user clicks on it, execute myFunction
+    document.getElementById("myBtn").onclick = function() {myFunction()};
+    /* myFunction toggles between adding and removing the show class, which is used to hide and show the dropdown content */
+    function myFunction() {
+      document.getElementById("myDropdown").classList.toggle("show");
+    }
+</script>
+<div class="bg-mc"><h2 class="my-text">Welcome t<span class="half">o</span><span class="other-half"> My Blog</span></h2></div>
+<section id="videos-page">
+    <h2 class="videos" id="Vid">My videos</h2>
+    <div class="groups">
+        <div class="individual">
+            <iframe src="https://www.youtube.com/embed/cG05vvLnauQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            {% comment %} <div class="date">10 oct, 2022</div><div class="views">1</div> {% endcomment %}
+        </div>
+        <div class="individual">
+            <iframe src="https://www.youtube.com/embed/SdsL-_T6zlc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            {% comment %} <div class="date">10 oct, 2022</div><div class="views">1</div> {% endcomment %}
+        </div>
+        <div class="individual">
+            <iframe src="https://www.youtube.com/embed/F0ffyDZovNM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            {% comment %} <div class="date">10 oct, 2022</div><div class="views">1</div> {% endcomment %}
+        </div>
+    </div>
+    <h2 class="see-more"><a href="https://www.youtube.com/channel/UC67r2u-zImaN2z_NXsnbF7A" target="_blank">See more</a></h2>
+</section>
+<main id="videos-page">
+    <section class="testim" id="testim">
+        <h2 class="videos" id="article">My Articles</h2>
+        <h3 class="see-more"><a href="{% url "articles" %}">Topics</a></h3>
+        <div class="wrap">
+    
+            <span id="right-arrow" class="arrow right fa fa-chevron-right"></span>
+            <span id="left-arrow" class="arrow left fa fa-chevron-left"></span>
+    
+            <ul class="dots" id="testim-dots">
+                <li class="dot active"></li>
+                <li class="dot"></li>
+                <li class="dot"></li>
+                <li class="dot"></li>
+                <li class="dot"></li>
+                <li class="dot"></li>
+                <li class="dot"></li>
+                <li class="dot"></li>
+                <li class="dot"></li>
+                <li class="dot"></li>
+                <li class="dot"></li>
+            </ul>
+    
+            <div class="cont" id="testim-content">
+    
+                <div class="active middle first">
+                    <a href="{% url "articles" %}#HTML">HTML</a>
+                </div>
+    
+                <div class="middle">
+                    <a href="{% url "articles" %}#Random">Random</a>
+                </div>
+
+                <div class="middle">
+                    <a href="{% url "articles" %}#CSS">CSS</a>
+                </div>
+
+                <div class="middle">
+                    <a href="{% url "articles" %}#JavaScript">JavaScript</a>
+                </div>
+
+                <div class="middle">
+                    <a href="{% url "articles" %}#BootStrap">BootStrap</a>
+                </div>
+
+                <div class="middle">
+                    <a href="{% url "articles" %}#Python">Python</a>
+                </div>
+
+                <div class="middle">
+                    <a href="{% url "articles" %}#Django">Django</a>
+                </div>
+
+                <div class="middle">
+                    <a href="{% url "articles" %}#React">React</a>
+                </div>
+                
+                <div class="middle">
+                    <a href="{% url "articles" %}#MySQL">MySQL</a>
+                </div>
+
+                <div class="middle">
+                    <a href="{% url "articles" %}#ML">ML</a>
+                </div>
+
+                <div class="middle">
+                    <a href="{% url "articles" %}#TypeScript">Typescript</a>
+                </div>
+            </div>
+        </div>
+        <script>
+            // vars
+            'use strict'
+            var testim = document.getElementById("testim"),
+                testimDots = Array.prototype.slice.call(document.getElementById("testim-dots").children),
+                testimContent = Array.prototype.slice.call(document.getElementById("testim-content").children),
+                testimleftArrow = document.getElementById("left-arrow"),
+                testimRightArrow = document.getElementById("right-arrow"),
+                testimSpeed = 4500,
+                currentSlide = 0,
+                currentActive = 0,
+                testimTimer
+                ;
+            window.onload = function () {
+
+                // Testim Script
+                function playSlide(slide) {
+                    for (var k = 0; k < testimDots.length; k++) {
+                        testimContent[k].classList.remove("active");
+                        testimContent[k].classList.remove("inactive");
+                        testimDots[k].classList.remove("active");
+                    }
+                    if (slide < 0) {
+                        slide = currentSlide = testimContent.length - 1;
+                    }
+                    if (slide > testimContent.length - 1) {
+                        slide = currentSlide = 0;
+                    }
+                    if (currentActive != currentSlide) {
+                        testimContent[currentActive].classList.add("inactive");
+                    }
+                    testimContent[slide].classList.add("active");
+                    testimDots[slide].classList.add("active");
+
+                    currentActive = currentSlide;
+
+                    clearTimeout(testimTimer);
+                    testimTimer = setTimeout(function () {
+                        playSlide(currentSlide += 1);
+                    }, testimSpeed)
+                }
+                // coding with nick
+                testimleftArrow.addEventListener("click", function () {
+                    playSlide(currentSlide -= 1);
+                })
+                testimRightArrow.addEventListener("click", function () {
+                    playSlide(currentSlide += 1);
+                })
+
+                for (var l = 0; l < testimDots.length; l++) {
+                    testimDots[l].addEventListener("click", function () {
+                        playSlide(currentSlide = testimDots.indexOf(this));
+                    })
+                }
+                playSlide(currentSlide);
+
+            }
+        </script>
+    </section>
+</main>
+<div class="footer">
+    <div class="social-link">
+        <div class="facebook"><a href="https://www.facebook.com/profile.php?id=100077935130604/Marvie code/" target="-blank"><i class="fab fa-facebook-f"></i></a></div>
+        <div class="twitter"><a href="https://twitter.com/@code_Marvie" target="_blank"><i class="fab fa-twitter"></i></a></div>
+        <div class="instagram"><a href="https://instagram.com/marviecode" target="_blank"><i class="fab fa-instagram"></i></a></div>
+        <div class="linkedon"><a href="https://www.linkedin.com/in/marvel-ukpong-62690023a/" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i>
+        </a></div>
+    </div>
+    <div class="contact">
+        <div class="phone-num"><a href="tel:+2347036959000" class="phon"><i class="fas fa-phone" class="font-icon"></i></a></div>
+        <div class="email"><a href="mailto:marvcode.co@gmail.com?body=Hi"><i class="fa fa-envelope" aria-hidden="true"></i></a></div>
+        <div class="location"><a href="https://www.google.com/maps/dir/6.4723077,3.3288194/1+Ikare+St,+Ijesha+Tedo+101241,+Lagos/@6.4801579,3.3226852,15z/data=!3m1!4b1!4m9!4m8!1m1!4e1!1m5!1m1!1s0x103b8ead3b69db6f:0x23bc3e8a4790b5e5!2m2!1d3.3306085!2d6.4830416" target="_blank"><i class="fa fa-map-marker-alt ic" target="_blank"></i></a></div>
+    </div>
+    <div class="links">
+        <div class="portfolio" target="_blank"><a href="https://bountukp20.github.io/marvcode/index.html" class="hi1"><i class="fas fa-briefcase hi"></i></a></div>
+    </div>
+    <div class="subscribe"><a href="https://www.youtube.com/channel/UC67r2u-zImaN2z_NXsnbF7A?sub_confirmation=1" target="_blank">Subscribe</a></div>
+    <div class="newsletter">
+        <h4 class="news-word">Subscribe to newsletter</h4>
+        <div class="start-btn">
+            <a href="#">Hit me</a>
+        </div>
+        <div class="center modal-box">
+            <div class="fas fa-times"></div>
+            <div class="fas fa-envelope icon1"></div>
+            <header>Don't miss updates from us !</header>
+            <p>We would give you feedback on the lastest video that comes out, or any updates on the website (whether it is a new article that comes out, we will notify you).</p>
+            <form method="post" action="https://formspree.io/f/mbjejlrw">
+                {% comment %} {% csrf_token %} {% endcomment %}
+                <div class="fas fa-envelope icon2"></div>
+                <input type="email" required placeholder="user@example.com">
+                <div>
+                    <input type="hidden" name="_next" value="https://bountukp20.github.io/marvcode/thankyou.html">
+                </div>
+                <button>Subscribe</button>
+            </form>
+        </div>
+        <script>
+            $(document).ready(function(){
+                $('.start-btn').click(function(){
+                    $('.modal-box').toggleClass("show-modal");
+                    $('.start-btn').toggleClass("show-modal");
+                });
+                $('.fa-times').click(function(){
+                    $('.modal-box').toggleClass("show-modal");
+                    $('.start-btn').toggleClass("show-modal");
+                });
+            });
+        </script>
+    </div>
+</div>
+{% endblock %}
