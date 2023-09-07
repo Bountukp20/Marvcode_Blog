@@ -709,6 +709,7 @@ form input{
     position: relative;
     bottom: 19em;
     left: 111%;
+    width: 20%;
 }
 .all-topics{
     color: white;

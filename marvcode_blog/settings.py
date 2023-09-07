@@ -85,7 +85,7 @@ DATABASES = {
         'NAME': 'marvcode_blog_database',  
         'USER': 'root',  
         'PASSWORD': 'Marvuk@2204',  
-        'HOST': 'railwaymysql',  
+        'HOST': '127.0.0.1',  
         'PORT': '3306',  
         
         'OPTIONS': {  
