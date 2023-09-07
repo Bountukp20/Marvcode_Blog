@@ -47,6 +47,7 @@ filelock==3.8.0
 fqdn==1.5.1
 fsspec==2023.6.0
 functions==0.7.0
+gunicorn==21.2.0
 huggingface-hub==0.16.4
 idna==3.3
 importlib-metadata==4.11.3
@@ -98,6 +99,7 @@ platformdirs==2.5.2
 preshed==3.0.8
 prometheus-client==0.15.0
 prompt-toolkit==3.0.36
+protobuf==3.20.3
 psutil==5.9.4
 psycopg2==2.9.6
 pure-eval==0.2.2
@@ -161,4 +163,5 @@ webcolors==1.12
 webencodings==0.5.1
 websocket-client==1.4.2
 Werkzeug==2.2.0
+whitenoise==6.5.0
 zipp==3.8.0
