@@ -81,12 +81,12 @@ WSGI_APPLICATION = 'marvcode_blog.wsgi.application'
 
 DATABASES = {
     'default': {  
-        'ENGINE': 'django.db.backends.mysql',  
-        'NAME': 'marvcode_blog_database',  
+        'ENGINE': 'mysql://root:P8RxWAUK4d3RrVRTHsXx@containers-us-west-78.railway.app:6981/railway',  
+        'NAME': 'railway',  
         'USER': 'root',  
-        'PASSWORD': 'Marvuk@2204',  
-        'HOST': '127.0.0.1',  
-        'PORT': '3306',  
+        'PASSWORD': 'P8RxWAUK4d3RrVRTHsXx',  
+        'HOST': 'containers-us-west-78.railway.app',  
+        'PORT': '6981',  
         
         'OPTIONS': {  
             'init_command': "SET sql_mode='STRICT_TRANS_TABLES'"  
