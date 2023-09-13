@@ -25,7 +25,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-8&#z!#arazjsah77b(3$r2s9748k*e79ps%qgul+u)xgwziuf_'
+SECRET_KEY = os.getenv('django-insecure-8&#z!#arazjsah77b(3$r2s9748k*e79ps%qgul+u)xgwziuf_')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -84,7 +84,14 @@ WSGI_APPLICATION = 'marvcode_blog.wsgi.application'
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
 DATABASES = {
-    'default': dj_database_url.config(default=DATABASE_URL, conn_max_age=1800),
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': os.getenv('marvcode_blog_database'),
+        'USER': os.getenv('root'),
+        'PASSWORD': os.getenv('Marvuk@2204'),
+        'HOST': os.getenv('containers-us-west-78.railway.app'),
+        'PORT': os.getenv('3306'),
+    }
 }
 
 
