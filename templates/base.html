@@ -1,0 +1,17 @@
+<!doctype html>
+{% load static %}
+<html lang="en">
+    <head>
+        <meta name="viewport" content=" width=device-width, user-scalable=no">
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="keyword" content="MarvCode, Ukpong, portfolio, railway">
+        <meta name="description" content="MarvCode's Personal Blog.">
+        <meta name="author" content="Marvel Ukpong">
+        <title>{% block title %}{% endblock %}</title>
+        <link rel="icon" href="{% static "blog\images\M.C Icon.png" type="image/png" sizes="5x5" %}">
+        {% block css_files %}{% endblock %}
+    </head>
+    <body>
+        {% block content %}{% endblock %}
+    </body>

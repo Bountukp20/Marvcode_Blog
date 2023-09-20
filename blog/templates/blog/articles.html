@@ -1,0 +1,205 @@
+{% extends "base.html" %}
+{% load static %}
+{% comment %} {% load socialaccount %} {% endcomment %}
+
+{% block css_files %}
+    <link rel="icon" href="{% static "justLap_main\images\JustLap Business Icon.jpg" type="image/png" sizes="27x27" %}">
+    <script src="https://kit.fontawesome.com/0a96adf822.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="{% static "blog/index.css" %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+{% endblock %}
+
+{% block title %}
+    MarvCode Blog|Articles
+{% endblock %}
+
+{% block content %}
+<style>
+    .dropdown-content{
+        margin-top: 10%;
+        overflow-y: auto;
+        max-height: 60%;
+    }
+    @media screen and (max-width: 868px){
+        .dropdown-content{
+            margin-top: 25%;
+            left: 60%;
+            overflow-y: auto;
+            max-height: 50%;
+        }
+    }
+</style>
+<div class="nav">
+    <nav>
+        <div class="toggle-button" onclick="nav(this)" id="navy">
+            <div class="bar1"></div>
+            <div class="bar2"></div>
+        </div>
+        <script>
+            function nav(x){
+              x.classList.toggle("change");
+              var x = document.getElementById('nav');
+              if (x.style.display == 'block') {
+                x.style.display = 'none';
+              }
+              else {
+                x.style.display = 'block';
+              }
+            }
+        </script>
+        <ul id="nav">
+            <li>
+                <a href="/">Home</a>
+            </li>
+            <li class="dropbtn" id="myBtn" class="active">Article<i class="fa fa-chevron-down" aria-hidden="true"></i></li>
+            <ul id="myDropdown" class="dropdown-content">
+                <li>
+                    <a href="#HTML" class="drop-link">HTML</a>
+                </li>
+                <li><a href="https://bountukp20.github.io/marvcode/index.html" class="drop-link" target="_blank">Random</a></li>
+                <li><a href="#article" class="drop-link">CSS</a></li>
+                <li><a href="#article" class="drop-link">MySQL</a></li>
+                <li><a href="#article" class="drop-link">ML</a></li>
+                <li><a href="#article" class="drop-link">Typescript</a></li>
+                <li><a href="https://bountukp20.github.io/marvcode/index.html" class="drop-link" target="_blank">JavaScript</a></li>
+                <li><a href="#article" class="drop-link">BootStrap</a></li>
+                <li><a href="https://bountukp20.github.io/marvcode/index.html" class="drop-link" target="_blank">Python</a></li>
+                <li><a href="#article" class="drop-link">Django</a></li>
+                <li><a href="#article" class="drop-link">React</a></li>
+            </ul>
+        </ul>
+    </nav>
+</div>
+<script>
+    // Get the button, and when the user clicks on it, execute myFunction
+    document.getElementById("myBtn").onclick = function() {myFunction()};
+    /* myFunction toggles between adding and removing the show class, which is used to hide and show the dropdown content */
+    function myFunction() {
+      document.getElementById("myDropdown").classList.toggle("show");
+    }
+</script>
+<section class="articles">
+    <div class="all-topics">
+        <h2 class="one">HTML</h2>
+        <div class="HTML" id="HTML">
+        {% for html in HTML_Topics %}
+            <div class"topics">
+                <a href="{{ html.get_absolute_url }}" class="link">
+                    <img src="{% static html.link %}">
+                    <h2 class="title">{{ html.title }}</h2>
+                </a>
+            </div>
+        {% endfor %}
+        </div><br>
+        <h2 class="two">Random</h2>
+        <div class="Random" id="Random">
+        {% for random in Random_Topics %}
+            <div class"topics">
+                <a href="#" class="link">
+                    <img src="{{ random.link }}"></img>
+                    <h2 class="title">{{ random.title }}</h2>
+                </a>
+            </div>
+        {% endfor %}
+        </div><br>
+        <h2 class="three">CSS</h2>
+        <div class="CSS" id="CSS">
+        {% for css in Css_Topics %}
+            <div class"topics">
+                <a href="#" class="link">
+                    <img src="{{ css.link }}"></img>
+                    <h2 class="title">{{ css.title }}</h2>
+                </a>
+            </div>
+        {% endfor %}
+        </div><br>
+        <h2 class="four">JavaScript</h2>
+        <div class="JavaScript" id="JavaScript">
+        {% for javascript in JavaScript_Topics %}
+            <div class"topics">
+                <a href="#" class="link">
+                    <img src="{{ javascript.link }}"></img>
+                    <h2 class="title">{{ javascript.title}}</h2>
+                </a>
+            </div>
+        {% endfor %}
+        </div><br>
+        <h2 class="five">BootStrap</h2>
+        <div class="BootStrap" id="BootStrap">
+        {% for BootStrap in BootStrap_Topics %}
+            <div class"topics">
+                <a href="#" class="link">
+                    <img src="{{ BootStrap.link }}"></img>
+                    <h2 class="title">{{ BootStrap.title }}</h2>
+                </a>
+            </div>
+        {% endfor %}
+        </div><br>
+        <h2 class="six">Python</h2>
+        <div class="Python" id="Python">
+        {% for Python in Python_Topics %}
+            <div class"topics">
+                <a href="#" class="link">
+                    <img src="{{ Python.link }}"></img>
+                    <h2 class="title">{{ Python.title }}</h2>
+                </a>
+            </div>
+        {% endfor %}
+        </div><br>
+        <h2 class="seven">Django</h2>
+        <div class="Django" id="Django">
+        {% for Django in Django_Topics %}
+            <div class"topics">
+                <a href="#" class="link">
+                    <img src="{{ Django.link }}"></img>
+                    <h2 class="title">{{ Django.title }}</h2>
+                </a>
+            </div>
+        {% endfor %}
+        </div>
+        <h2 class="eight">React</h2>
+        <div class="React" id="React">
+        {% for React in React_Topics %}
+            <div class"topics">
+                <a href="#" class="link">
+                    <img src="{{ React.link }}"></img>
+                    <h2 class="title">{{ React.title }}</h2>
+                </a>
+            </div>
+        {% endfor %}
+        <h2 class="eight">MySQL</h2>
+        <div class="React" id="MySQL">
+        {% for MySQL in MySQL_Topics %}
+            <div class"topics">
+                <a href="#" class="link">
+                    <img src="{{ MySQL.link }}"></img>
+                    <h2 class="title">{{ MySQL.title }}</h2>
+                </a>
+            </div>
+        {% endfor %}
+        <h2 class="eight">TypeScript</h2>
+        <div class="React" id="TypeScript">
+        {% for TypeScript in TypeScript_Topics %}
+            <div class"topics">
+                <a href="#" class="link">
+                    <img src="{{ TypeScript.link }}"></img>
+                    <h2 class="title">{{ TypeScript.title }}</h2>
+                </a>
+            </div>
+        {% endfor %}
+        <h2 class="eight">ML</h2>
+        <div class="React" id="ML">
+        {% for ML in ML_Topics %}
+            <div class"topics">
+                <a href="#" class="link">
+                    <img src="{{ ML.link }}"></img>
+                    <h2 class="title">{{ ML.title }}</h2>
+                </a>
+            </div>
+        {% endfor %}
+        </div><br>
+    </div>
+</section>
+{% endblock %}

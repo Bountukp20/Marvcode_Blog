@@ -1,0 +1,258 @@
+{% extends "base.html" %}
+{% load static %}
+{% comment %} {% load socialaccount %} {% endcomment %}
+
+{% block css_files %}
+    <script src="https://kit.fontawesome.com/0a96adf822.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="{% static "blog/index.css" %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+{% endblock %}
+
+{% block title %}
+    MarvCode Blog|Articles|{{ HTML.title }}
+{% endblock %}
+
+{% block content %}
+<style>
+    .dropdown-content{
+        margin-top: 10%;
+        overflow-y: auto;
+        max-height: 60%;
+    }
+    p{
+        font-size: 1.5em;
+        font-family: Terminal;
+    }
+    .next{
+        position: absolute;
+        top: 37.5em;
+    }
+    .next a, .previous a{
+        color: white; 
+    }
+    .previous{
+        position: absolute;
+        bottom: 0.5em;
+        left: 10em;
+    }
+</style>
+<div class="nav">
+    <nav>
+        <div class="toggle-button" onclick="nav(this)" id="navy">
+            <div class="bar1"></div>
+            <div class="bar2"></div>
+        </div>
+        <script>
+            function nav(x){
+              x.classList.toggle("change");
+              var x = document.getElementById('nav');
+              if (x.style.display == 'block') {
+                x.style.display = 'none';
+              }
+              else {
+                x.style.display = 'block';
+              }
+            }
+        </script>
+        <ul id="nav">
+            <li>
+                <a href="/">Home</a>
+            </li>
+            <li class="dropbtn" id="myBtn"><a href="/articles">Article</a></li>
+        </ul>
+    </nav>
+</div>
+<script>
+    // Get the button, and when the user clicks on it, execute myFunction
+    document.getElementById("myBtn").onclick = function() {myFunction()};
+    /* myFunction toggles between adding and removing the show class, which is used to hide and show the dropdown content */
+    function myFunction() {
+      document.getElementById("myDropdown").classList.toggle("show");
+    }
+</script>
+<section class="html-body">
+    <div class="div-class">
+        <div class="all-html">
+            <img src="{% static HTML.link %}">
+            <h2 class="title">{{ HTML.title }}</h2>
+            <div class="next"><a href="{{ HTML.link_six }}">Next >></a></div>
+            <p class="p">
+                {% if HTML.id == 1 %}
+                    <p class="p">
+
+                        As a beginner to programming, the first language you would probably come across is HTML, which is the most basic programming language. The Hyper text Markup Language, which is the meaning to the acronym HTML. It is a standard markup language for creating web pages.
+                        HTML, like a human body, consist of elements and atttributes. A human body consist of a the head, body and foot e.t.c. Just as in a human body the head can't come after the body e.t.c, so in HTML there is a syntax of writing codes.
+                        HTML Document
+                        <pre><code>
+                            &lt;!doctype html&gt;
+                                &lt;html&gt;
+                                    &lt;head&gt;
+                                    &lt;title&gt;Page Title&lt;/title&gt;
+                                    &lt;/head&gt;
+                                    &lt;body&gt;
+                                
+                                        &lt;h1&gt;My First Heading&lt;/h1&gt;
+                                        &lt;h2&gt;My First Heading&lt;/h1&gt;
+                                        &lt;h3&gt;My First Heading&lt;/h1&gt;
+                                        &lt;p&gt;My first paragraph.&lt;/p&gt;
+                                
+                                    &lt;/body&gt;
+                                &lt;/html&gt;
+                        </code></pre>
+                        
+                        <p class="p">The &lt;!doctype html&gt; is a declaration message that defines the type of HTML document it is i.e html 5, html 4, e.t.c. 
+                        The &lt;html&gt; element is the root element of an HTML page.
+                        The &lt;head&gt; element contains meta information about the web page.
+                        The &lt;title&gt; element specifies a title for the HTML page (which is  usually shown in the browser's title bar or in the page's tab). The title can also be used as an attribute which I will be coming to soon.
+                        The &lt;body&gt; element defines the document's body, and is a container for all the visible contents, such as headings, paragraphs, images, hyperlinks, tables, lists, etc.
+                        The &lt;h1&gt; element defines a large heading. There are h1 to h6, and each of them makes the text look smaller in the descending order i.e that is h1's text is bigger than h2's, h2's bigger than h3's e.t.c.
+                        The &lt;p&gt; element defines a paragraph.
+                        There several of them e.g 
+                        &lt;div&gt;&lt;/div&gt;: which divides contents, and puts space around the wrapped contents.
+                        &lt;span&gt;&lt;/span&gt;: which is almost like the div tag, but it takes the amount of spaces needed.
+                        &lt;br&gt;: It jumps two lines between two contents.
+                        &lt;hr&gt;: It draws an horizontal line across a web page.
+                        &lt;a&gt;&lt;/a&gt;: Or anchor tag, it is used to create a hyper link between documents, websites e.t.c. This is different from the link tag.
+                        &lt;link&gt;: Defines the relationship between the current document and an external resource. It is an empty element, it contains attributes only.
+                        &lt;script&gt;&lt;/script&gt;: It is used to embed javascript code in HTML document.
+                        &lt;table&gt;&lt;/table&gt;: It is used to define a table content in a HTML document.
+                        &lt;tr&gt;: It defines rows in an HTML document.
+                        &lt;input&gt;: It is used to create interactive controls for web-based forms in order to accept data from the user; a wide variety of types of input data and control widgets are available, depending on the device and user agent.
+                        &lt;p&gt;&lt;strong&gt;&lt;/strong&gt;&lt;/p&gt;: it means that the tag is nested properly.
+                        &lt;p&gt;&lt;strong&gt;&lt;/p&gt;&lt;/strong&gt;: It means that the tag is not nested properly.
+                        &lt;b&gt;&lt;/b&gt;: It is used to make text contents bold.
+                        &lt;em&gt;&lt;/em&gt;: It is used to emphasize text contents.
+                        &lt;mark&gt;&lt;/mark&gt;: It is used to highlight text contents.
+                        &lt;abbr&gt;&lt;/abbr&gt;: It is used to display texts in an abbreviated form.
+                        &lt;img&gt;&lt;/img&gt;: It is used to insert images to web page.
+                        &lt;label&gt;&lt;/label&gt;: It is used to name an input field.
+                        &lt;button&gt;&lt;/button&gt;: It is used define a clickable button.
+                        &lt;form&gt;&lt;/form&gt;: It is used to define a form.
+                        &lt;footer&gt;&lt;/footer&gt;: It is used to define a footer for a document or section.
+                        <!--...-->: It is used to define a comment.
+                        &lt;bdo&gt;: It is used to override the current text direction.
+                        &lt;audio&gt;&lt;/audio&gt;: it used to define embedded sound content.
+                        &lt;nav&gt;&lt;/nav&gt;: It is used to define navigation links.
+                        &lt;section&gt;&lt;/section&gt;: It is used to define a section in a document.
+                        &lt;header&gt;&lt;/header&gt;: It is used to define a header for a document or section 
+                        &lt;option&gt;&lt;/option&gt;: It is used to define an option in a drop-down list.
+                        &lt;select&gt;&lt;/select&gt;: It is used to define a drop-down list.</p>
+                        <p class="p"><underline>What is an HTML Element?</underline><br>
+                        The HTML Element can simply be referred to as the human part i.e head, body, and foot e.t.c which contains components needed for life, in this case needed to display content i.e: text e.t.c. An element is catagorised into two: open tags, and closed tags.
+                        Closed tags: They are HTML elements that has a start tag, some content in it, and a closed tag i.e: &lt;h1&gt;My First Heading&lt;/h1&gt;.
+                        Open tags: They are HTML elements that just has a start tag. There are no contents written in them, as most times there are other elements that follows on a new line. They can be referred to as empty tags which only contains attributes most often e.g &lt;br&gt;, &lt;hr&gt; e.t.c.
+                        What are attributes?
+                        They are written inside a HTML element i.e 
+                        <pre><code>
+                        &lt;body style="background: grey;"&gt;
+                         &lt;a href="https://www.google.com"  title="google"&gt;
+                                Google
+                         &lt;/a&gt;
+                        &lt;/body&gt;
+                        </code></pre></p>
+                        <p class="p">The value inside the tags are called attributes. As shown an element can contain one or more attributes.
+                        Attributes gives more information to an element about a content is to be displayed, just like a skin colour of someone tells us who is dark or who is light.<br>
+                        <underline>The importance of HTML</underline><br>
+                        HTML is the fundamental language for creating web related things e.g web pages, web games, web apps e.t.c. As shown in the examples you must have noticed spaces in between open tags when writting a child elements e.g 
+                        <pre><code>
+                            &lt;body&gt;
+                
+                                &lt;h1&gt;My First Heading&lt;/h1&gt;
+                                &lt;p&gt;My first paragraph.&lt;/p&gt;
+                
+                            &lt;/body&gt;
+                        </code></pre>
+                        </p>
+                        <p class="p">This process is called indenting. It is very useful as it makes your code easier to read. Also HTML is not case sensitive, so it is a conventional way of written codes in HTML.</p>
+                    </p>
+                    <p class="p">For more info on identing and attributes visit <a href="#">/</a></p>
+
+                {% elif HTML.id == 2 %}
+                    <div class="previous"><a href="{{ HTML.link_two }}"><< Previous</a></div>
+                    <p class="p">
+
+                        <underline>Default Homepage</underline><br>
+                        The index.html page is the most common name used for the default page shown on a website if no other page is specified when a visitor requests the site. In other words, index.html is the name used for the homepage of the website.<br><br>
+
+                                                                                                <underline>Site Architecture and Index.html.</underline><br>
+                        Websites are built inside of directories on a web server. For your website, you must save each webpage as a separate file. For example, your "About Us" page may be saved as about.html and your "Contact Us" page may be contact.html. Your site will be comprised of the .html documents. Sometimes when someone visits the website, they do so without specifying one of these specific files in the address that they use for the URL. For example: http://www.lifewire.com
+
+                        Even though there is no page listed in the URL request made to the server, that web server still needs to deliver a page for this request so that the browser has something to display. The file that will be delivered is the default page for the directory. Basically, if no file is requested, the server knows which one to serve up by default page in a directory is named; index.html
+
+                        In essence, when you go to a URL and specify a specific file, that is what the server will deliver. If you do not specify a file name, the server looks for a default file and displays that automatically -almost as if you had typed in that file name in the URL.<br><br>
+
+                                                                                                <underline>Other Default Page Names.</underline><br>
+                        Besides index.html, there are other default page names that some sites use, including:
+
+                        .index.html
+                        .defualt.html
+                        .home.html or .htm
+                    </p>
+                {% endif %}
+            </p>
+            {% comment %} {% if user.is_authenticated %}
+            {% if userLikes.like_num != 0 %}
+            <form method="POST" action="{% url "html_increment_likes" %}" onsubmit="showForm()">
+                {% csrf_token %}
+                <input type="hidden" name="add_token" value="#2227`\zx~"/>
+                <button class="hearts" id="show" style="display: block;">&hearts;</button>
+            </form>
+            {% else %}
+            <form method="POST" action="{% url "decrease_likes" %}">
+                {% csrf_token %}
+                <button class="hearts dislike" id="hide" onsubmit="hideForm()" style="display: none;">&#128078;</button>
+            </form>
+            {% endif %} {% endcomment %}
+            {% comment %} <script>
+                let getToken = localstorage.getItem("add_token")
+                let show = document.getElementById("show")
+                let hide = document.getElementById("hide")
+
+                if(getTkoken != null){
+                    show.style.display = 'block';
+                    hide.style.display = 'none';
+                }
+                else{
+                    show.style.display = 'none';
+                    hide.style.display = 'block'
+                }
+
+                function showForm(){
+                    localStorage.setItem("add_token" add_token)
+                    return false;
+                }
+
+                function hideForm(){
+                    localStorage.removeItem('add_token');
+                }
+            </script> {% endcomment %}
+            {% comment %} {% else %}
+            <form action="javascript:void(0);" autocomplete="none">
+                {% csrf_token %}
+                <input type="hidden" value="{{ HTML.id }}" name="like_id">
+                <input type="hidden" value="1" name="one"> {% endcomment %}
+                {% comment %} <button class="hearts" onsubmit="mySubmit()">&hearts;</button> {% endcomment %}
+            {% comment %} </form>
+            <script>
+                function submitForm() { {% endcomment %}
+                    {% comment %} // Perform any validation or custom actions here
+        
+                    // To prevent the form from submitting
+                    // Remove the next line if you want the form to submit after validation
+                    event.preventDefault();
+                }
+                function mySubmit(){
+                    alert("You have to sign in in order to like this post.")
+                }
+            {% endif %}
+            </script> {% endcomment %}
+        </div>
+    </div>
+</section>
+{% comment %} {% if user.is_authenticated %}
+<p class="counter-plus">Likes: {{ sum_all_likes }}</p>
+{% endif %} {% endcomment %}
+{% comment %} <a href="{{ HTML.link_six }}" class="next">Next >></a> {% endcomment %}
+{% endblock %}
