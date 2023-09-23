@@ -71,7 +71,7 @@ COPY blog /app
 EXPOSE 8000
 
 # Set the entry point for the application
-ENTRYPOINT ["python", "/app/manage.py"]
+ENTRYPOINT ["python", "manage.py"]
 
 # Default command to run the Django server
-CMD ["runserver", "0.0.0.0:8000"]
+CMD ["runserver", "127.0.0.1:8000"]
