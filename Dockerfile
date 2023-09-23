@@ -7,20 +7,22 @@ WORKDIR /app
 # Use the Debian base image
 FROM debian:bullseye
 
-# Update the package list and install the necessary packages
-RUN apt-get update && apt-get install -y libmariadb-dev-compat libmariadb-dev
+# Update the package list and install necessary packages
+RUN apt-get update && apt-get install -y python3 python3-pip
 
-# ... rest of your Dockerfile
-# Install MySQL development dependencies
-# RUN apt-get update && apt-get install -y libmysqlclient-dev
+# Set the working directory to /app
+WORKDIR /app
 
 # Copy the current directory contents into the container at /app
 COPY . /app
 
-# Install any needed packages specified in requirements.txt
-RUN python -m venv /opt/venv && . /opt/venv/bin/activate && pip install -r requirements.txt
+# Create a virtual environment and activate it
+RUN python3 -m venv /opt/venv && . /opt/venv/bin/activate
 
-# Make port 80 available to the world outside this container
+# Install the project dependencies
+RUN pip install -r requirements.txt
+
+# Expose port 80 for the application to use
 EXPOSE 80
 
 # Define environment variable
