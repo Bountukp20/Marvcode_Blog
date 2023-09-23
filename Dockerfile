@@ -67,5 +67,11 @@ RUN python3 -m venv /opt/venv && \
 # Copy the rest of the application code into the container
 COPY blog /app
 
+# Expose port 8000 for Django to listen on
+EXPOSE 8000
+
 # Set the entry point for the application
-ENTRYPOINT ["python", "/app/apps.py"]
+ENTRYPOINT ["python", "/app/manage.py"]
+
+# Default command to run the Django server
+CMD ["runserver", "0.0.0.0:8000"]
