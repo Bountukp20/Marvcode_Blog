@@ -51,7 +51,7 @@
 FROM python:3.10.4
 
 # Set the working directory in the container
-WORKDIR /
+# WORKDIR marvcode_blog/
 
 # Install necessary tools and libraries for MySQL
 RUN apt-get update && apt-get install -y python3-dev default-libmysqlclient-dev build-essential
@@ -68,4 +68,4 @@ RUN python3 -m venv /opt/venv && \
 COPY blog /app
 
 # Set the entry point for the application
-ENTRYPOINT ["python", "app.py"]
+ENTRYPOINT ["python", "/blog/app.py"]
