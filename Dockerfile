@@ -51,7 +51,7 @@
 FROM python:3.10.4
 
 # Set the working directory in the container
-WORKDIR /app
+WORKDIR /blog
 
 # Install necessary tools and libraries for MySQL
 RUN apt-get update && apt-get install -y python3-dev default-libmysqlclient-dev build-essential
