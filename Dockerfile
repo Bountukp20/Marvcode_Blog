@@ -68,4 +68,4 @@ RUN python3 -m venv /opt/venv && \
 COPY blog /app
 
 # Set the entry point for the application
-ENTRYPOINT ["python", "app.py"]
+ENTRYPOINT ["python", "./app.py"]
