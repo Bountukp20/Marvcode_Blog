@@ -7,20 +7,21 @@ WORKDIR /app
 # Use the Debian base image
 FROM debian:bullseye
 
-# Update the package list and install necessary packages
-RUN apt-get update && apt-get install -y python3 python3-pip
+# Install necessary packages for creating the virtual environment
+RUN apt-get update && apt-get install -y python3-venv python3-pip
 
-# Set the working directory to /app
-WORKDIR /app
+# Create a virtual environment and activate it
+RUN python3 -m venv /opt/venv
+ENV PATH="/opt/venv/bin:$PATH"
 
 # Copy the current directory contents into the container at /app
 COPY . /app
 
-# Create a virtual environment and activate it
-RUN python3 -m venv /opt/venv && . /opt/venv/bin/activate
-
 # Install the project dependencies
 RUN pip install -r requirements.txt
+
+# Set the working directory to /app
+WORKDIR /app
 
 # Expose port 80 for the application to use
 EXPOSE 80
