@@ -4,8 +4,15 @@ FROM python:3.10.4
 # Set the working directory to /app
 WORKDIR /app
 
+# Use the Debian base image
+FROM debian:bullseye
+
+# Update the package list and install the necessary packages
+RUN apt-get update && apt-get install -y libmariadb-dev-compat libmariadb-dev
+
+# ... rest of your Dockerfile
 # Install MySQL development dependencies
-RUN apt-get update && apt-get install -y libmysqlclient-dev
+# RUN apt-get update && apt-get install -y libmysqlclient-dev
 
 # Copy the current directory contents into the container at /app
 COPY . /app
