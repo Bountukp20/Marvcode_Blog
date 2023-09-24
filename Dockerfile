@@ -51,7 +51,7 @@
 FROM python:3.10.4
 
 # Set the working directory in the container
-WORKDIR /app
+WORKDIR /app/marvcode_blog
 
 # Install necessary tools and libraries for MySQL
 RUN apt-get update && apt-get install -y python3-dev default-libmysqlclient-dev build-essential
@@ -64,11 +64,8 @@ RUN python3 -m venv /opt/venv && \
     . /opt/venv/bin/activate && \
     pip install --no-cache-dir -r requirements.txt
 
-# Copy the rest of the application code into the container
-COPY marvcode_blog /app
-
-# Change the working directory to the Django project folder
-WORKDIR /app/marvcode_blog
+# Copy the entire project code into the container
+COPY marvcode_blog /app/marvcode_blog
 
 # Expose port 8000 for Django to listen on
 EXPOSE 8000
