@@ -67,6 +67,9 @@ RUN python3 -m venv /opt/venv && \
 # Copy the rest of the application code into the container
 COPY marvcode_blog /app
 
+# Change the working directory to the Django project folder
+WORKDIR /app/marvcode_blog
+
 # Expose port 8000 for Django to listen on
 EXPOSE 8000
 
