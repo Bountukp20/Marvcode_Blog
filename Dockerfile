@@ -46,6 +46,7 @@
 # Define environment variable
 # ENV NAME World
 
+RUN pip install django
 
 # Use the Python 3.8 image as the base image
 FROM python:3.10.4

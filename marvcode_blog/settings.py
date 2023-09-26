@@ -13,6 +13,15 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 from pathlib import Path
 import os
 import dj_database_url
+from django.core.exceptions import ImproperlyConfigured
+
+def get_env_variable(var_name):
+    try:
+        return os.environ[var_name]
+    except KeyError:
+        error_msg = f"Set the {var_name} environment variable"
+        raise ImproperlyConfigured(error_msg)
+
 
 DATABASE_URL = "mysql://root:P8RxWAUK4d3RrVRTHsXx@containers-us-west-78.railway.app:6981/railway"
 
@@ -86,11 +95,11 @@ WSGI_APPLICATION = 'marvcode_blog.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': os.getenv('marvcode_blog_database'),
-        'USER': os.getenv('root'),
-        'PASSWORD': os.getenv('Marvuk@2204'),
-        'HOST': os.getenv('containers-us-west-78.railway.app'),
-        'PORT': os.getenv('3306'),
+        'NAME': get_env_variable('DB_NAME'),
+        'USER': get_env_variable('DB_USER'),
+        'PASSWORD': get_env_variable('DB_PASSWORD'),
+        'HOST': get_env_variable('DB_HOST'),
+        'PORT': get_env_variable('DB_PORT'),
     }
 }
 
