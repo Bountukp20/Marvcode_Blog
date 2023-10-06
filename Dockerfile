@@ -46,10 +46,12 @@
 # Define environment variable
 # ENV NAME World
 
+# Use the Python 3.10.4 image as the base image
+FROM python:3.10.4
+
+# Install Django
 RUN pip install django
 
-# Use the Python 3.8 image as the base image
-FROM python:3.10.4
 
 # Set the working directory in the container
 WORKDIR /app
