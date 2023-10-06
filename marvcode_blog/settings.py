@@ -12,7 +12,7 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 
 from pathlib import Path
 import os
-import dj_database_url
+from dj_database_url import parse as db_url
 from django.core.exceptions import ImproperlyConfigured
 
 def get_env_variable(var_name):
@@ -23,7 +23,7 @@ def get_env_variable(var_name):
         raise ImproperlyConfigured(error_msg)
 
 
-DATABASE_URL = "mysql://root:P8RxWAUK4d3RrVRTHsXx@containers-us-west-78.railway.app:6981/railway"
+# DATABASE_URL = "mysql://root:P8RxWAUK4d3RrVRTHsXx@containers-us-west-78.railway.app:6981/railway"
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -92,16 +92,21 @@ WSGI_APPLICATION = 'marvcode_blog.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql',
+#         'NAME': get_env_variable('DB_NAME'),
+#         'USER': get_env_variable('DB_USER'),
+#         'PASSWORD': get_env_variable('DB_PASSWORD'),
+#         'HOST': get_env_variable('DB_HOST'),
+#         'PORT': get_env_variable('DB_PORT'),
+#     }
+# }
+
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': get_env_variable('DB_NAME'),
-        'USER': get_env_variable('DB_USER'),
-        'PASSWORD': get_env_variable('DB_PASSWORD'),
-        'HOST': get_env_variable('DB_HOST'),
-        'PORT': get_env_variable('DB_PORT'),
-    }
+    'default': db_url(os.environ.get('DATABASE_URL'))
 }
+
 
 
 # Password validation
