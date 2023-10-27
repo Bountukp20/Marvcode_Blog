@@ -1,7 +1,7 @@
 /git_token
-*.env
-/env
+.env
+/venv
 .vscode
 .db.sqlite3
-*.pyc
+.pyc
 __pycache__

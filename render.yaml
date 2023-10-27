@@ -1,27 +1,27 @@
-# version: 1
-# name: marvcode_blog
-# scripts:
-#   build:
-#     - pip install -r requirements.txt
-#   start:
-#     - python manage.py migrate
-#     - python manage.py collectstatic --noinput
-#     - python manage.py runserver 127.0.0.1:8000
-# services:
-#   - type: python
-#     env: python=3.10.4
-#   - type: mysql
-# databases:
-#   - name: marvcode_blog_database
-#     type: mysql
-
+version: 1
+name: marvcode_blog
+scripts:
+  build:
+    - pip install -r requirements.txt
+  start:
+    - python manage.py migrate
+    - python manage.py collectstatic --noinput
+    - python manage.py runserver 127.0.0.1:8000
 services:
-  - name: marvcode_blog
-    type: web
-    env: python
-    buildCommand: pip install -r requirements.txt
-    startCommand: gunicorn marvcode_blog.wsgi --bind 0.0.0.0:$PORT
-
-database:
+  - type: python
+    env: python=3.10.4
+  - type: mysql
+databases:
   - name: marvcode_blog_database
-    plan: starter
+    type: mysql
+
+# services:
+#   - name: marvcode_blog
+#     type: web
+#     env: python
+#     buildCommand: pip install -r requirements.txt
+#     startCommand: gunicorn marvcode_blog.wsgi --bind 0.0.0.0:$PORT
+
+# database:
+#   - name: marvcode_blog_database
+#     plan: starter

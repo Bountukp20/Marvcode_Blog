@@ -12,15 +12,15 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 
 from pathlib import Path
 import os
-from dj_database_url import parse as db_url
-from django.core.exceptions import ImproperlyConfigured
+import dj_database_url # import parse as db_url
+# from django.core.exceptions import ImproperlyConfigured
 
-def get_env_variable(var_name):
-    try:
-        return os.environ[var_name]
-    except KeyError:
-        error_msg = f"Set the {var_name} environment variable"
-        raise ImproperlyConfigured(error_msg)
+# def get_env_variable(var_name):
+#     try:
+#         return os.environ[var_name]
+#     except KeyError:
+#         error_msg = f"Set the {var_name} environment variable"
+#         raise ImproperlyConfigured(error_msg)
 
 
 # DATABASE_URL = "mysql://root:P8RxWAUK4d3RrVRTHsXx@containers-us-west-78.railway.app:6981/railway"
@@ -34,7 +34,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.getenv('django-insecure-8&#z!#arazjsah77b(3$r2s9748k*e79ps%qgul+u)xgwziuf_')
+SECRET_KEY = os.environ.get('sECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -95,16 +95,16 @@ WSGI_APPLICATION = 'marvcode_blog.wsgi.application'
 # DATABASES = {
 #     'default': {
 #         'ENGINE': 'django.db.backends.mysql',
-#         'NAME': get_env_variable('DB_NAME'),
-#         'USER': get_env_variable('DB_USER'),
-#         'PASSWORD': get_env_variable('DB_PASSWORD'),
-#         'HOST': get_env_variable('DB_HOST'),
-#         'PORT': get_env_variable('DB_PORT'),
+#         'NAME': os.environ.get('DB_NAME'),
+#         'USER': os.environ.get('DB_USER'),
+#         'PASSWORD': os.environ.get('DB_PASSWORD'),
+#         'HOST': os.environ.get('DB_HOST'),
+#         'PORT': os.environ.get('DB_PORT'),
 #     }
 # }
 
 DATABASES = {
-    'default': db_url(os.environ.get('DATABASE_URL'))
+    'default': dj_database_url.config(default=os.environ.get('DATABASE_URL'))
 }
 
 
