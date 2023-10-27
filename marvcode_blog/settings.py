@@ -92,20 +92,24 @@ WSGI_APPLICATION = 'marvcode_blog.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.mysql',
-#         'NAME': os.environ.get('DB_NAME'),
-#         'USER': os.environ.get('DB_USER'),
-#         'PASSWORD': os.environ.get('DB_PASSWORD'),
-#         'HOST': os.environ.get('DB_HOST'),
-#         'PORT': os.environ.get('DB_PORT'),
-#     }
-# }
-
 DATABASES = {
-    'default': dj_database_url.config(default=os.environ.get('DATABASE_URL'))
+    'default': {  
+        'ENGINE': 'django.db.backends.mysql',  
+        'NAME': 'defaultdb',  
+        'USER': 'avnadmin',  
+        'PASSWORD': 'AVNS_-3hOXOmfSyRbxMwJwYH',  
+        'HOST': 'mysql-344306f0-marvcode-blog-database.a.aivencloud.com',  
+        'PORT': '13818',  
+        
+        'OPTIONS': {  
+            'init_command': "SET sql_mode='STRICT_TRANS_TABLES'"  
+        }  
+    }  
 }
+
+# DATABASES = {
+#     'default': dj_database_url.config(default=os.environ.get('DATABASE_URL'))
+# }
 
 
 
