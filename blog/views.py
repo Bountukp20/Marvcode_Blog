@@ -1,5 +1,7 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from .models import *
+from django.core.mail import send_mail
+from .forms import *
 
 # Create your views here.
 
@@ -83,10 +85,43 @@ def all_html(request, id):
 #     return redirect(request.META['HTTP_REFERER'])
 
 
+def subscribe(request):
+    sub = Subscriber()
+    sub.email = request.POST.get('email')
+    sub.save()
+    return redirect("subscription_successful")
 
+def subscription_successful(request):
+    return render(request, 'blog/subscription_successful.html')
 
+def create_newsletter(request):
+    # if user.is_superuser:
+    if request.method == 'POST':
+        form = NewsletterForm(request.POST)
+        if form.is_valid():
+            newsletter = form.save()
 
+            # Send the newsletter email to all subscribers
+            subscribers = Subscriber.objects.all()
+            subject = newsletter.subject
+            content = newsletter.content
+            sender_email = 'marvcode.co@gmail.com'
 
+            for subscriber in subscribers:
+                send_mail(
+                    subject,
+                    content,
+                    sender_email,
+                    [subscriber.email],
+                    fail_silently=False,
+                )
+
+            return redirect('/')
+    else:
+        form = NewsletterForm()
+    return render(request, 'blog/create_newsletter.html', {'form': form})
+    # else:
+    #     return redirect("/")
 
 
 

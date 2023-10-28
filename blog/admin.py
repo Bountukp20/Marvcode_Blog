@@ -15,6 +15,6 @@ admin.site.register(Comments)
 admin.site.register(MySQL)
 admin.site.register(ML)
 admin.site.register(TypeScript)
-
-
+admin.site.register(Newsletter)
+admin.site.register(Subscriber)
 

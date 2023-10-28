@@ -183,7 +183,18 @@ class TypeScript(models.Model):
     def __str__(self):
             return self.title
    
+class Newsletter(models.Model):
+    subject = models.CharField(max_length=200)
+    content = models.TextField()
 
+    def __str__(self):
+        return self.subject
+
+class Subscriber(models.Model):
+    email = models.EmailField(unique=True)
+
+    def __str__(self):
+        return self.email
 
 
 
