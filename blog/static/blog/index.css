@@ -598,7 +598,7 @@ i{
     visibility: hidden;
     background: white;
     height: auto;
-    width: 400px;
+    width: 377px;
     padding: 30px;
     border-radius: 5px;
     border: 1px solid #50dcfb;
@@ -971,9 +971,9 @@ pre{
         color: rgb(194, 49, 71);
     }
     .start-btn{
-        margin-bottom: 10%;
+        margin-bottom: 2%;
     }
     .start-btn a{
-        font-size: 0.455em;
+        font-size: 0.479em;
     }
 }
