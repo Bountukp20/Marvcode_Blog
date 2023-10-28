@@ -518,8 +518,8 @@ border-color: #7297ab;
     color: black;
 }
 .footer{
-    top: 70%;
-    right: 0.1em;
+    top: 74%;
+    right: 0.001em;
     position: fixed;
     background: #fff;
     width: 100%;
@@ -556,14 +556,14 @@ i{
 }
 .news-word{
     position: relative;
-    left: 59%;
+    left: 44%;
     bottom: 20em;
 }
 .subscribe a{
     font-size: 1.5em;
     position: relative;
-    bottom: 8em;
-    left: 5em;
+    bottom: 8.3em;
+    left: 19.3em;
     text-decoration: none;
     color: rgb(194, 49, 71);
 }
@@ -571,7 +571,7 @@ i{
     color: white;
     background: #48DBFB;
   }
-  .center,.start-btn{
+  .center,{
     z-index: 100;
     position: absolute;
     top: 50%;
@@ -707,10 +707,13 @@ form input{
   }
 .start-btn{
     position: relative;
-    bottom: 19em;
-    left: 111%;
+    bottom: 31.7%;
     width: 20%;
+    z-index: 100;
+    right: 56%;
+    transform: translate(-50%, -50%);
 }
+
 .all-topics{
     color: white;
 }
@@ -805,10 +808,22 @@ pre{
         grid-template-columns: repeat(2, 1fr);
         grid-column-gap: 5%;
     }
+    .start-btn{
+        z-index: 100;
+        position: absolute;
+        top: 50%;
+        right: 10%;
+        transform: translate(-50%, -50%);
+    }
+    .news-word{
+        position: relative;
+        left: 44%;
+        bottom: 20em;
+    }
 }
 @media screen and (max-width: 868px){
     nav{
-        margin-left: 60%;
+        margin-left: 56%;
         width: 50%;
         height: 100%;
     }
@@ -818,7 +833,6 @@ pre{
         width: 25%;
         left: 70%;
     }
-    
     iframe{
         width: 200px;
         height: 115px;
@@ -834,10 +848,10 @@ pre{
     .dropdown-content{
         width: 9em;
         left: 70%;
-        margin-top: 29%;
+        margin-top: 20%;
     }
     .toggle-button{
-        margin-left: 21.2%;
+        margin-left: 25.2%;
         position: fixed;
         display: inline-block;
         cursor: pointer;
@@ -902,5 +916,51 @@ pre{
         width: 88%;
         height: 17em;
         padding-right: 1.7em;
+    }
+    .middle{
+        font-size: 0.7em;
+        margin-top: 3.15em;
+    }
+    .footer{
+        top: 68%;
+        position: fixed;
+    }
+    .subscribe a{
+        font-size: 1.5em;
+        position: relative;
+        bottom: 8em;
+        left: 14em;
+        text-decoration: none;
+        color: rgb(194, 49, 71);
+    }
+    .start-btn{
+        font-size: 0.7em;
+    }
+    .news-word{
+        position: relative;
+        left: 44%;
+        bottom: 20em;
+    }
+}
+@media screen and (max-width: 548px){
+    .dropdown-content{
+        width: 9em;
+        left: 40%;
+        margin-top: 39%;
+    }
+    nav ul{
+        left: 62%;
+    }
+    .subscribe a{
+        font-size: 1.5em;
+        position: relative;
+        bottom: 8em;
+        left: 5em;
+        text-decoration: none;
+        color: rgb(194, 49, 71);
+    }
+    .start-btn{
+        font-size: 0.1em;
+        width: 7%;
     }
 }
