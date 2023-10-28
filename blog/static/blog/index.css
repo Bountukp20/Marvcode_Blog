@@ -563,7 +563,7 @@ i{
     font-size: 1.5em;
     position: relative;
     bottom: 8.3em;
-    left: 19.3em;
+    left: 45.3%;
     text-decoration: none;
     color: rgb(194, 49, 71);
 }
@@ -591,7 +591,8 @@ i{
     box-shadow: 5px 5px 15px rgba(0,0,0,.1);
   }
   .modal-box{
-    bottom: 35em;
+    left: 0.4em;
+    bottom: 42em;
     z-index: 8;
     opacity: 0;
     visibility: hidden;
@@ -706,12 +707,13 @@ form input{
     letter-spacing: 2px;
   }
 .start-btn{
-    position: relative;
-    bottom: 31.7%;
+    position: absolute;
+    bottom: 54.7%;
     width: 20%;
     z-index: 100;
-    right: 56%;
+    right: 25%;
     transform: translate(-50%, -50%);
+    font-size: 1em;
 }
 
 .all-topics{
@@ -808,13 +810,15 @@ pre{
         grid-template-columns: repeat(2, 1fr);
         grid-column-gap: 5%;
     }
-    .start-btn{
+    /* .start-btn{
         z-index: 100;
         position: absolute;
         top: 50%;
         right: 10%;
+        width: 30%;
         transform: translate(-50%, -50%);
-    }
+        font-size: 0.2em;
+    } */
     .news-word{
         position: relative;
         left: 44%;
@@ -929,12 +933,20 @@ pre{
         font-size: 1.5em;
         position: relative;
         bottom: 8em;
-        left: 14em;
+        text-align: center;
         text-decoration: none;
         color: rgb(194, 49, 71);
     }
-    .start-btn{
-        font-size: 0.7em;
+    /* .start-btn{
+        z-index: 100;
+        position: absolute;
+        top: 34%;
+        right: 20%;
+        transform: translate(-50%, -50%);
+        width: 40%;
+    } */
+    .start-btn a{
+        font-size: 1em;
     }
     .news-word{
         position: relative;
@@ -955,12 +967,13 @@ pre{
         font-size: 1.5em;
         position: relative;
         bottom: 8em;
-        left: 5em;
         text-decoration: none;
         color: rgb(194, 49, 71);
     }
     .start-btn{
-        font-size: 0.1em;
-        width: 7%;
+        margin-bottom: 10%;
+    }
+    .start-btn a{
+        font-size: 0.455em;
     }
 }
