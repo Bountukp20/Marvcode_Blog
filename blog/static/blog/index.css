@@ -598,7 +598,7 @@ i{
     visibility: hidden;
     background: white;
     height: auto;
-    width: 377px;
+    width: 400px;
     padding: 30px;
     border-radius: 5px;
     border: 1px solid #50dcfb;
@@ -975,5 +975,8 @@ pre{
     }
     .start-btn a{
         font-size: 0.479em;
+    }
+    .modal-box{
+        width: 70%;
     }
 }
