@@ -3,12 +3,12 @@
 {% comment %} {% load socialaccount %} {% endcomment %}
 
 {% block css_files %}
-    <link rel="icon" href="{% static "justLap_main\images\JustLap Business Icon.jpg" type="image/png" sizes="27x27" %}">
     <script src="https://kit.fontawesome.com/0a96adf822.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="{% static "blog/index.css" %}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
     <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <meta http-equiv="refresh" content="9; url=/">
 {% endblock %}
 
 {% block title %}
@@ -18,4 +18,5 @@
 {% block content %}
     <h2>Subscription Successful</h2>
     <p>Thank you for subscribing to our newsletter. You will receive updates via email.</p>
+    <script>alert("You've received a mail, please check your spam folders in your email. Sorry for the inconvience. If you haven't received any mail in the past 30 minutes please reach out to marvcode.co@gmail.com( with the subject "Complaints for Marvcode Blog"). We promise to work on this in the nearest future.")
 {% endblock %}

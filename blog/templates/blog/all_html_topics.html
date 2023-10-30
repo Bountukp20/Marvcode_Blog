@@ -25,18 +25,6 @@
         font-size: 1.5em;
         font-family: Terminal;
     }
-    .next{
-        position: absolute;
-        top: 37.5em;
-    }
-    .next a, .previous a{
-        color: white; 
-    }
-    .previous{
-        position: absolute;
-        bottom: 0.5em;
-        left: 10em;
-    }
 </style>
 <div class="nav">
     <nav>
@@ -77,7 +65,6 @@
         <div class="all-html">
             <img src="{% static HTML.link %}">
             <h2 class="title">{{ HTML.title }}</h2>
-            <div class="next"><a href="{{ HTML.link_six }}">Next >></a></div>
             <p class="p">
                 {% if HTML.id == 1 %}
                     <p class="p">
@@ -167,10 +154,11 @@
                         </p>
                         <p class="p">This process is called indenting. It is very useful as it makes your code easier to read. Also HTML is not case sensitive, so it is a conventional way of written codes in HTML.</p>
                     </p>
-                    <p class="p">For more info on identing and attributes visit <a href="#">/</a></p>
+                    <p class="p">For more info on identing and attributes visit <a href="https://www.freecodecamp.org/newss/how-to-indent-in-html-and-why-it-is-important/">freecodecamp</a></p><br>
+                    <div class="next_html"><a href="{{ HTML.link_six }}">Next >></a></div>
+                    <br>
 
                 {% elif HTML.id == 2 %}
-                    <div class="previous"><a href="{{ HTML.link_two }}"><< Previous</a></div>
                     <p class="p">
 
                         <underline>Default Homepage</underline><br>
@@ -190,6 +178,12 @@
                         .defualt.html
                         .home.html or .htm
                     </p>
+                    <br>
+                    <div class="article_link">
+                        <div class="previous"><a href="{{ HTML.link_two }}"><< Previous</a></div>
+                        <div class="next_html2"><a href="{{ HTML.link_six }}">Next >></a></div>
+                    </div>
+                    <br>
                 {% endif %}
             </p>
             {% comment %} {% if user.is_authenticated %}

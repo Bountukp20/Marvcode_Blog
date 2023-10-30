@@ -571,13 +571,13 @@ i{
     color: white;
     background: #48DBFB;
   }
-  .center,{
+  /* .center{
     z-index: 100;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-  }
+  } */
   .start-btn a{
     font-size: 25px;
     background: white;
@@ -824,6 +824,14 @@ pre{
         left: 44%;
         bottom: 20em;
     }
+    pre{
+        width: 91%;
+    }
+    /* .next_html{
+        position: absolute;
+        top: 2em;
+        margin-right: 15%;
+    } */
 }
 @media screen and (max-width: 868px){
     nav{
@@ -916,8 +924,8 @@ pre{
         color: blue;
     }
     pre{
-        margin-left: 0.3em;
-        width: 88%;
+        margin-left: 2.2em;
+        width: 81.2%;
         height: 17em;
         padding-right: 1.7em;
     }
@@ -977,6 +985,36 @@ pre{
         font-size: 0.479em;
     }
     .modal-box{
-        width: 310px;
+        width: 300px;
     }
+    pre{
+        margin-left: 3.9em;
+        width: 84.2%;
+        height: 17em;
+        padding-right: 0.1em;
+        font-size: 0.5em;
+    }
+    .p{
+        margin-left: 0;
+        margin-right: 2em;
+    }
+}
+.next_html{
+    position: absolute;
+    right: 50%;
+    z-index: 555;
+}
+.next_html a, .previous a, .next_html2 a{
+    color: white; 
+}
+.previous{
+    position: absolute;
+    left: 10%;
+}
+.next_html2{
+    position: absolute;
+    right: 10%;
+}
+.article_link{
+    width: 100%;
 }
