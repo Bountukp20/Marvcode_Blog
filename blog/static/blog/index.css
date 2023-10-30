@@ -571,13 +571,13 @@ i{
     color: white;
     background: #48DBFB;
   }
-  /* .center{
+  .center,.startbtn{
     z-index: 100;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-  } */
+  }
   .start-btn a{
     font-size: 25px;
     background: white;
@@ -985,7 +985,7 @@ pre{
         font-size: 0.479em;
     }
     .modal-box{
-        width: 300px;
+        width: 310px;
     }
     pre{
         margin-left: 3.9em;

@@ -4,7 +4,6 @@
 
 {% block css_files %}
     <script src="https://kit.fontawesome.com/0a96adf822.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="{% static "blog//error/error.css" %}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
     <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
@@ -15,6 +14,25 @@
 {% endblock %}
 
 {% block content %}
+<style>
+    *{padding:0;margin:0;background:#f0f0f0; text-align: center;}
+    img{display: block;
+      margin-left: auto;
+      margin-right: auto;
+      width: 100%;
+      height: 30%;
+    }
+      .btn1{text-align:center;}
+     .text{text-align:center;font-size:2em;margin-bottom:14%;}
+     .error-text{text-align:center; font-family: Cursive;
+    } .error{font-family: 'Roboto', sans-serif;font-size: 1.5rem;text-decoration:none;padding:1.5em;background:#6200ee;color:#fff;border-radius:2%;}
+    .all_round{
+        width: 100%;
+        background: black;
+        box-sizing:border-box;
+        align-items: center;
+    }
+</style>
 <div class="all_round">
     <img src="https://i.ibb.co/W6tgcKQ/softcodeon.gif" width="100%" height="20%">
     <h1 class="error-text">Whoops, We can't seem to find the resource you're looking for.</h1>
