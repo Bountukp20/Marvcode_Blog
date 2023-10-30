@@ -91,8 +91,8 @@ def subscribe(request):
     sub.email = request.POST.get('email')
     sub.save()
     send_mail(
-        'Welcome new Subcribers',
-        'This is to confirm you just subscribe to marvcode_blog.onrender.com/',
+        'Marvcode Blog',
+        """This is to confirm you just subscribe to marvcode_blog.onrender.com/""",
         'marvcode.co@gmail.com',
         [request.POST.get('email')],
         fail_silently=False,
