@@ -518,8 +518,8 @@ border-color: #7297ab;
     color: black;
 }
 .footer{
-    top: 70%;
-    right: 0.1em;
+    top: 74%;
+    right: 0.001em;
     position: fixed;
     background: #fff;
     width: 100%;
@@ -556,14 +556,14 @@ i{
 }
 .news-word{
     position: relative;
-    left: 59%;
+    left: 44%;
     bottom: 20em;
 }
 .subscribe a{
     font-size: 1.5em;
     position: relative;
-    bottom: 8em;
-    left: 5em;
+    bottom: 8.3em;
+    left: 45.3%;
     text-decoration: none;
     color: rgb(194, 49, 71);
 }
@@ -571,7 +571,7 @@ i{
     color: white;
     background: #48DBFB;
   }
-  .center,.start-btn{
+  .center.start-btn{
     z-index: 100;
     position: absolute;
     top: 50%;
@@ -591,7 +591,8 @@ i{
     box-shadow: 5px 5px 15px rgba(0,0,0,.1);
   }
   .modal-box{
-    bottom: 35em;
+    left: 0.4em;
+    bottom: 42em;
     z-index: 8;
     opacity: 0;
     visibility: hidden;
@@ -706,10 +707,15 @@ form input{
     letter-spacing: 2px;
   }
 .start-btn{
-    position: relative;
-    bottom: 19em;
-    left: 111%;
+    position: absolute;
+    bottom: 54.7%;
+    width: 20%;
+    z-index: 100;
+    right: 25%;
+    transform: translate(-50%, -50%);
+    font-size: 1em;
 }
+
 .all-topics{
     color: white;
 }
@@ -804,10 +810,32 @@ pre{
         grid-template-columns: repeat(2, 1fr);
         grid-column-gap: 5%;
     }
+    /* .start-btn{
+        z-index: 100;
+        position: absolute;
+        top: 50%;
+        right: 10%;
+        width: 30%;
+        transform: translate(-50%, -50%);
+        font-size: 0.2em;
+    } */
+    .news-word{
+        position: relative;
+        left: 44%;
+        bottom: 20em;
+    }
+    pre{
+        width: 91%;
+    }
+    /* .next_html{
+        position: absolute;
+        top: 2em;
+        margin-right: 15%;
+    } */
 }
 @media screen and (max-width: 868px){
     nav{
-        margin-left: 60%;
+        margin-left: 56%;
         width: 50%;
         height: 100%;
     }
@@ -817,7 +845,6 @@ pre{
         width: 25%;
         left: 70%;
     }
-    
     iframe{
         width: 200px;
         height: 115px;
@@ -833,10 +860,10 @@ pre{
     .dropdown-content{
         width: 9em;
         left: 70%;
-        margin-top: 29%;
+        margin-top: 20%;
     }
     .toggle-button{
-        margin-left: 21.2%;
+        margin-left: 25.2%;
         position: fixed;
         display: inline-block;
         cursor: pointer;
@@ -897,9 +924,97 @@ pre{
         color: blue;
     }
     pre{
-        margin-left: 0.3em;
-        width: 88%;
+        margin-left: 2.2em;
+        width: 81.2%;
         height: 17em;
         padding-right: 1.7em;
     }
+    .middle{
+        font-size: 0.7em;
+        margin-top: 3.15em;
+    }
+    .footer{
+        top: 68%;
+        position: fixed;
+    }
+    .subscribe a{
+        font-size: 1.5em;
+        position: relative;
+        bottom: 8em;
+        text-align: center;
+        text-decoration: none;
+        color: rgb(194, 49, 71);
+    }
+    /* .start-btn{
+        z-index: 100;
+        position: absolute;
+        top: 34%;
+        right: 20%;
+        transform: translate(-50%, -50%);
+        width: 40%;
+    } */
+    .start-btn a{
+        font-size: 1em;
+    }
+    .news-word{
+        position: relative;
+        left: 44%;
+        bottom: 20em;
+    }
+}
+@media screen and (max-width: 548px){
+    .dropdown-content{
+        width: 9em;
+        left: 40%;
+        margin-top: 39%;
+    }
+    nav ul{
+        left: 62%;
+    }
+    .subscribe a{
+        font-size: 1.5em;
+        position: relative;
+        bottom: 8em;
+        text-decoration: none;
+        color: rgb(194, 49, 71);
+    }
+    .start-btn{
+        margin-bottom: 2%;
+    }
+    .start-btn a{
+        font-size: 0.479em;
+    }
+    .modal-box{
+        width: 310px;
+    }
+    pre{
+        margin-left: 3.9em;
+        width: 84.2%;
+        height: 17em;
+        padding-right: 0.1em;
+        font-size: 0.5em;
+    }
+    .p{
+        margin-left: 0;
+        margin-right: 2em;
+    }
+}
+.next_html{
+    position: absolute;
+    right: 50%;
+    z-index: 555;
+}
+.next_html a, .previous a, .next_html2 a{
+    color: white; 
+}
+.previous{
+    position: absolute;
+    left: 10%;
+}
+.next_html2{
+    position: absolute;
+    right: 10%;
+}
+.article_link{
+    width: 100%;
 }

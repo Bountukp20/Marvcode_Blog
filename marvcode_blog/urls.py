@@ -21,7 +21,7 @@ from django.urls import path, include
 from django.conf.urls import handler404, handler500, handler403, handler400
 from blog import views
 
-handler404 = views.custom_404  
+handler404 = views.custom_404
 
 urlpatterns = [
     path('admin/', admin.site.urls),
