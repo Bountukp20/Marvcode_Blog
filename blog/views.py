@@ -92,7 +92,7 @@ def subscribe(request):
     sub.save()
     send_mail(
         'Marvcode Blog',
-        """This is to confirm you just subscribe to marvcode_blog.onrender.com/""",
+        """This is to confirm you just subscribe to marvcode-blog.onrender.com/""",
         'marvcode.co@gmail.com',
         [request.POST.get('email')],
         fail_silently=False,
