@@ -30,6 +30,12 @@
             max-height: 50%;
         }
     }
+    @media screen and (max-width: 548px){
+        .dropdown-content{
+            margin-top: 43%;
+            left: 40%;
+        }
+    }
 </style>
 <div class="nav">
     <nav>
@@ -158,7 +164,7 @@
                 </a>
             </div>
         {% endfor %}
-        </div>
+        </div><br>
         <h2 class="eight">React</h2>
         <div class="React" id="React">
         {% for React in React_Topics %}
@@ -169,6 +175,7 @@
                 </a>
             </div>
         {% endfor %}
+        </div><br>
         <h2 class="eight">MySQL</h2>
         <div class="React" id="MySQL">
         {% for MySQL in MySQL_Topics %}
@@ -179,6 +186,7 @@
                 </a>
             </div>
         {% endfor %}
+        </div><br>
         <h2 class="eight">TypeScript</h2>
         <div class="React" id="TypeScript">
         {% for TypeScript in TypeScript_Topics %}
@@ -189,6 +197,7 @@
                 </a>
             </div>
         {% endfor %}
+        </div><br>
         <h2 class="eight">ML</h2>
         <div class="React" id="ML">
         {% for ML in ML_Topics %}
