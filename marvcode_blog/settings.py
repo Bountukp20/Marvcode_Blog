@@ -34,7 +34,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-8&#z!#arazjsah77b(3$r2s9748k*e79ps%qgul+u)xgwziuf_'
+SECRET_KEY = os.environ.get("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
@@ -95,11 +95,11 @@ WSGI_APPLICATION = 'marvcode_blog.wsgi.application'
 DATABASES = {
     'default': {  
         'ENGINE': 'django.db.backends.mysql',  
-        'NAME': 'defaultdb',  
-        'USER': 'avnadmin',  
-        'PASSWORD': 'AVNS_-3hOXOmfSyRbxMwJwYH',  
-        'HOST': 'mysql-344306f0-marvcode-blog-database.a.aivencloud.com',  
-        'PORT': '13818',  
+        'NAME': os.environ.get("DB_NAME"),  
+        'USER': os.environ.get("DB_USER"),  
+        'PASSWORD': os.environ.get("DB_PASSWORD"),  
+        'HOST': os.environ.get("DB_HOST"),  
+        'PORT': os.environ.get("DB_PORT"),  
         
         'OPTIONS': {  
             'init_command': "SET sql_mode='STRICT_TRANS_TABLES'"  
@@ -170,6 +170,6 @@ EMAIL_HOST = 'smtp.elasticemail.com'
 EMAIL_PORT = 2525
 EMAIL_USE_TLS = True
 EMAIL_HOST_USER = 'marvcode.co@gmail.com'
-EMAIL_HOST_PASSWORD = '19DD92923195938FE9CC28DE2F8BFA171A56'
+EMAIL_HOST_PASSWORD = os.environ.get("EMAIL_PASSWORD")
 
 

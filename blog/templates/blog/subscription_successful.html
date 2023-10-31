@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
     <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
-    <meta http-equiv="refresh" content="9; url=/">
+    {% comment %} <meta http-equiv="refresh" content="11; url=/"> {% endcomment %}
 {% endblock %}
 
 {% block title %}
@@ -16,7 +16,14 @@
 {% endblock %}
 
 {% block content %}
-    <h2>Subscription Successful</h2>
-    <p>Thank you for subscribing to our newsletter. You will receive updates via email.</p>
-    <script>alert("You've received a mail, please check your spam folders in your email. Sorry for the inconvience. If you haven't received any mail in the past 30 minutes please reach out to marvcode.co@gmail.com( with the subject "Complaints for Marvcode Blog"). We promise to work on this in the nearest future.")
+    <h2 style="color: white; box-sizing: border-box; text-align: center; text-decoration: underline;">Subscription Successful</h2><br>
+    <p style="color: white; box-sizing: border-box; width: 100%; padding: 5em;">Thank you for subscribing to our newsletter. You will receive updates via email. Please if you don't seem to see it check your spam folders in your email. Sorry for the inconvience. If you haven't received any mail in the past 30 minutes please reach out to marvcode.co@gmail.com( with the subject "Complaints for Marvcode Blog"). We promise to work on this in the nearest future.
+    </p>
+    <p style="color: white; box-sizing: border-box; width: 100%; padding: 5em;">This page will reload in 11 seconds</p>
+    {% comment %} <script>
+        function my_function(){
+            alert("You've received a mail, please check your spam folders in your email. Sorry for the inconvience. If you haven't received any mail in the past 30 minutes please reach out to marvcode.co@gmail.com( with the subject "Complaints for Marvcode Blog"). We promise to work on this in the nearest future.")
+        }
+        my_function()
+    </script> {% endcomment %}
 {% endblock %}
