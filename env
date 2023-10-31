@@ -1,0 +1,7 @@
+DB_NAME=defaultdb
+DB_USER=avnadmin
+DB_PASSWORD=AVNS_-3hOXOmfSyRbxMwJwYH
+DB_HOST=mysql-344306f0-marvcode-blog-database.a.aivencloud.com
+DB_PORT=13818
+SECRET_KEY=django-insecure-8&#z!#arazjsah77b(3$r2s9748k*e79ps%qgul+u)xgwziuf_
+DATABASE_URL=mysql://avnadmin:AVNS_-3hOXOmfSyRbxMwJwYH@mysql-344306f0-marvcode-blog-database.a.aivencloud.com:13818/defaultdb?ssl-mode=REQUIRED

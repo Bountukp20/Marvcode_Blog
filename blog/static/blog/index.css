@@ -961,6 +961,12 @@ pre{
         left: 44%;
         bottom: 20em;
     }
+    .bar1{
+        top: 3.4%;
+    }
+    .bar2{
+        top: 5.7%;
+    }
 }
 @media screen and (max-width: 548px){
     .dropdown-content{
