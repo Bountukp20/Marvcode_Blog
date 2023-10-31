@@ -546,7 +546,7 @@ i{
 }
 .footer .links{
     text-align: center;
-    bottom: 9em;
+    bottom: 7em;
     position: relative;
 }
 .footer .contact{
@@ -560,9 +560,9 @@ i{
     bottom: 20em;
 }
 .subscribe a{
-    font-size: 1.5em;
+    font-size: 1.2em;
     position: relative;
-    bottom: 8.3em;
+    bottom: 8.1em;
     left: 45.3%;
     text-decoration: none;
     color: rgb(194, 49, 71);
@@ -579,7 +579,7 @@ i{
     transform: translate(-50%, -50%);
   }
   .start-btn a{
-    font-size: 25px;
+    font-size: 1em;
     background: white;
     color: #48DBFB;
     padding: 10px 15px;
