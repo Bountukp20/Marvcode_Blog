@@ -810,6 +810,14 @@ pre{
         grid-template-columns: repeat(2, 1fr);
         grid-column-gap: 5%;
     }
+    .bar1{
+        left: 84%;
+        top: 3.4%;
+    }
+    .bar2{
+        left: 84.05%;
+        top: 5.7%;
+    }
     /* .start-btn{
         z-index: 100;
         position: absolute;
@@ -962,9 +970,11 @@ pre{
         bottom: 20em;
     }
     .bar1{
+        left: 83%;
         top: 3.4%;
     }
     .bar2{
+        left: 83.5%;
         top: 5.7%;
     }
 }
@@ -973,6 +983,14 @@ pre{
         width: 9em;
         left: 40%;
         margin-top: 39%;
+    }
+    .bar1{
+        left: 85%;
+        top: 3.4%;
+    }
+    .bar2{
+        left: 85.5%;
+        top: 5.7%;
     }
     nav ul{
         left: 62%;
