@@ -560,7 +560,7 @@ i{
     bottom: 20em;
 }
 .subscribe a{
-    font-size: 1.2em;
+    font-size: 1em;
     position: relative;
     bottom: 8.1em;
     left: 45.3%;
@@ -946,7 +946,7 @@ pre{
         position: fixed;
     }
     .subscribe a{
-        font-size: 1.5em;
+        font-size: 1em;
         position: relative;
         bottom: 8em;
         text-align: center;
@@ -996,7 +996,7 @@ pre{
         left: 62%;
     }
     .subscribe a{
-        font-size: 1.5em;
+        font-size: 1em;
         position: relative;
         bottom: 8em;
         text-decoration: none;
