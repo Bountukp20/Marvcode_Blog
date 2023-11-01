@@ -546,7 +546,7 @@ i{
 }
 .footer .links{
     text-align: center;
-    bottom: 7em;
+    bottom: 39%;
     position: relative;
 }
 .footer .contact{
@@ -562,7 +562,7 @@ i{
 .subscribe a{
     font-size: 1em;
     position: relative;
-    bottom: 8.1em;
+    bottom: 43%;
     left: 45.3%;
     text-decoration: none;
     color: rgb(194, 49, 71);
@@ -708,7 +708,7 @@ form input{
   }
 .start-btn{
     position: absolute;
-    bottom: 54.7%;
+    bottom: 55.7%;
     width: 20%;
     z-index: 100;
     right: 25%;
@@ -948,7 +948,7 @@ pre{
     .subscribe a{
         font-size: 1em;
         position: relative;
-        bottom: 8em;
+        /* bottom: 8em; */
         text-align: center;
         text-decoration: none;
         color: rgb(194, 49, 71);
@@ -998,7 +998,7 @@ pre{
     .subscribe a{
         font-size: 1em;
         position: relative;
-        bottom: 8em;
+        /* bottom: 8em; */
         text-decoration: none;
         color: rgb(194, 49, 71);
     }
