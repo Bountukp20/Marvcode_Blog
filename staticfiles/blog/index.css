@@ -556,17 +556,28 @@ i{
 }
 .news-word{
     position: relative;
-    left: 44%;
-    bottom: 20em;
+    left: 42%;
+    bottom: 19.3em;
 }
-.subscribe a{
+.subscribe-div{
+    align-items: center;
+    font-size: 1em;
+}
+.subscribe-btn{
+    width: 20%;
+    border-radius: 2%;
+    background: rgb(194, 49, 71);
+    color: white;
+    text-decoration: none;
+}
+/* .subscribe a{
     font-size: 1em;
     position: relative;
     bottom: 43%;
     left: 45.3%;
     text-decoration: none;
-    color: rgb(194, 49, 71);
-}
+    color: white;
+} */
 ::selection{
     color: white;
     background: #48DBFB;
