@@ -98,7 +98,7 @@ def send_verification_email(email, code):
     message = f"Click the following link to verify your subscription: {verification_url}"
     send_mail('Subscription Verification', message, 'your_email@example.com' [email])
 
-def subscribe(request):
+def subscribe(request, code):
     # get_all_subs = Subscriber.objects.all()
     try:
         subscription = Subscriber.objects.get(verification_code=code)
