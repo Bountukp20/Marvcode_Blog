@@ -7,7 +7,7 @@ from django.utils import timezone
 from django.urls import reverse
 from datetime import timedelta
 from django.utils.timezone import now
-import secrets
+
 
 # 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 git access token
 # Create your models here.
@@ -192,12 +192,10 @@ class Newsletter(models.Model):
 
 class Subscriber(models.Model):
     email = models.EmailField(unique=True)
-    verification_code = models.CharField(max_length=30)
-    is_verified = models.BooleanField(default=False)
+
     def __str__(self):
         return self.email
-    def generate_verification_code():
-        return secrets.token_urlsafe(15)
+
 
 
 
