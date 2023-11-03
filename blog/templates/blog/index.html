@@ -326,7 +326,7 @@
             <div class="fas fa-envelope icon1"></div>
             <header>Don't miss updates from us !</header>
             <p>We would give you feedback on the lastest video that comes out, or any updates on the website (whether it is a new article that comes out, we will notify you).</p>
-            <form method="post" action="{% url 'send_verification_email' code=verification_code %}">
+            <form method="post" action="{% url 'subscribe' %}">
                 {% csrf_token %}
                 <div class="fas fa-envelope icon2"></div>
                 <input type="email" name="email" required placeholder="user@example.com">
