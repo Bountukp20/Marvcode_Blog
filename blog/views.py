@@ -5,7 +5,6 @@ from .forms import *
 from django.core.validators import validate_email
 from django.core.exceptions import ValidationError
 from django.http import HttpResponse
-import secrets
 from django.urls import reverse
 from django.http import JsonResponse
 
@@ -90,13 +89,12 @@ def all_html(request, id):
     
 #     return redirect(request.META['HTTP_REFERER'])
 
-def generate_verification_code():
-    return secrets.token_urlsafe(16)
 
 def send_verification_email(email, code):
     verification_url = reverse('subscribe', args=[code])
     message = f"Click the following link to verify your subscription: {verification_url}"
-    send_mail('Subscription Verification', message, 'your_email@example.com' [email])
+    send_mail('Subscription Verification', message, 'marvcode.co@gmail.com' [email])
+    return redirect("subscription_successful")
 
 def subscribe(request, code):
     # get_all_subs = Subscriber.objects.all()
