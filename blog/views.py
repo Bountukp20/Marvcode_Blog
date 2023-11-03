@@ -5,6 +5,9 @@ from .forms import *
 from django.core.validators import validate_email
 from django.core.exceptions import ValidationError
 from django.http import HttpResponse
+import secrets
+from django.urls import reverse
+from django.http import JsonResponse
 
 # Create your views here.
 
@@ -87,24 +90,24 @@ def all_html(request, id):
     
 #     return redirect(request.META['HTTP_REFERER'])
 
+def generate_verification_code():
+    return secrets.token_urlsafe(16)
+
+def send_verification_email(email, code):
+    verification_url = reverse('subscribe', args=[code])
+    message = f"Click the following link to verify your subscription: {verification_url}"
+    send_mail('Subscription Verification', message, 'your_email@example.com' [email])
 
 def subscribe(request):
     # get_all_subs = Subscriber.objects.all()
     try:
-        validate_email(request.POST.get('email'))
-        sub = Subscriber()
-        sub.email = request.POST.get('email')
-        sub.save()
-        send_mail(
-            'Marvcode Blog',
-            """This is to confirm you just subscribed to marvcode-blog.onrender.com/""",
-            'marvcode.co@gmail.com',
-            [request.POST.get('email')],
-            fail_silently=False,
-        )
+        subscription = Subscriber.objects.get(verification_code=code)
+        subscription.is_verified = True
+        subscription.save()
         return redirect("subscription_successful")
-    except ValidationError:
+    except Subscriber.DoesNotExist:
         return HttpResponse("Invalid email address")
+
 def subscription_successful(request):
     return render(request, 'blog/subscription_successful.html')
 

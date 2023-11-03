@@ -19,7 +19,7 @@ urlpatterns = [
     path("<int:id>", views.all_html, name="all_html"),
     path('subscription_successful/', views.subscription_successful, name="subscription_successful"),
     path('create/', views.create_newsletter, name="create_newsletter"),
-    path('subscribe/', views.subscribe, name="subscribe"),
+    path('subscribe/<str:code>/', views.subscribe, name="subscribe"),
     # path("+1_like_html", html_increment_likes, name="html_increment_likes"),
     # path("-1_likes", decrease_likes, name="decrease_likes"),
 ]

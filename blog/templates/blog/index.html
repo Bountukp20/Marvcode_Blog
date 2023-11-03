@@ -334,7 +334,7 @@
                 <div>
                     <input type="hidden" name="_next" value="https://bountukp20.github.io/marvcode/thankyou.html">
                 </div>
-                <button>Subscribe</button>
+                <button id ="subs">Subscribe</button>
             </form>
         </div>
         <script>
@@ -346,6 +346,11 @@
                 $('.fa-times').click(function(){
                     $('.modal-box').toggleClass("show-modal");
                     $('.start-btn').toggleClass("show-modal");
+                });
+            });
+            $(document).ready(function () {
+                $('#subs').click(function () {
+                    alert("An email comfirmation mail has been sent to you. Please if you don't seem to find it in the inbox check the spam folder.");
                 });
             });
         </script>
