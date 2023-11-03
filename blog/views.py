@@ -2,6 +2,9 @@ from django.shortcuts import render, get_object_or_404, redirect
 from .models import *
 from django.core.mail import send_mail
 from .forms import *
+from django.core.validators import validate_email
+from django.core.exceptions import ValidationError
+from django.http import HttpResponse
 
 # Create your views here.
 
@@ -87,18 +90,21 @@ def all_html(request, id):
 
 def subscribe(request):
     # get_all_subs = Subscriber.objects.all()
-    sub = Subscriber()
-    sub.email = request.POST.get('email')
-    sub.save()
-    send_mail(
-        'Marvcode Blog',
-        """This is to confirm you just subscribed to marvcode-blog.onrender.com/""",
-        'marvcode.co@gmail.com',
-        [request.POST.get('email')],
-        fail_silently=False,
-    )
-    return redirect("subscription_successful")
-
+    try:
+        validate_email(request.POST.get('email'))
+        sub = Subscriber()
+        sub.email = request.POST.get('email')
+        sub.save()
+        send_mail(
+            'Marvcode Blog',
+            """This is to confirm you just subscribed to marvcode-blog.onrender.com/""",
+            'marvcode.co@gmail.com',
+            [request.POST.get('email')],
+            fail_silently=False,
+        )
+        return redirect("subscription_successful")
+    except ValidationError:
+        return HttpResponse("Invalid email address")
 def subscription_successful(request):
     return render(request, 'blog/subscription_successful.html')
 
