@@ -22,9 +22,9 @@ def home(request):
             subscription.save()
 
             # Send a verification email
-            subject = 'Verify your subscription for Marvcode-Blog'
-            message = f'Click the following link to verify your subscription: {request.build_absolute_uri("/subscribe/" + token)}'
-            from_email = 'marvcode.co@email.com'  # Replace with your email
+            subject = """<h2>Verify your subscription for Marvcode-Blog</h2>"""
+            message = """<body><p>This is to confirm your account has been used to subscribe to Marvcode Blog. But please Click the following link to verify your subscription: {request.build_absolute_uri("/subscribe/" + token)}</p></body>"""
+            from_email = 'marvcode.co@gmail.com'  # Replace with your email
             recipient_list = [email]
 
             send_mail(subject, message, from_email, recipient_list)
@@ -114,7 +114,7 @@ def subscribe(request, token):
         subscription = Subscriber.objects.get(token=token)
         subscription.verified = True
         subscription.save()
-        return render(request, 'subscription_successful.html')
+        return render(request, 'blog/subscription_successful.html')
     except Subscriber.DoesNotExist:
         return render(request, 'blog/index.html')
 
