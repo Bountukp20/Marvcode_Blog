@@ -22,8 +22,8 @@ def home(request):
             subscription.save()
 
             # Send a verification email
-            subject = """<h2>Verify your subscription for Marvcode-Blog</h2>"""
-            message = """<body><p>This is to confirm your account has been used to subscribe to Marvcode Blog. But please Click the following link to verify your subscription: {request.build_absolute_uri("/subscribe/" + token)}</p></body>"""
+            subject = 'Verify your subscription for Marvcode-Blog'
+            message = f'This is to confirm your account has been used to subscribe to Marvcode Blog. But please click the following link to verify your subscription: {request.build_absolute_uri("/subscribe/" + token)}'
             from_email = 'marvcode.co@gmail.com'  # Replace with your email
             recipient_list = [email]
 
@@ -129,7 +129,7 @@ def create_newsletter(request):
             newsletter = form.save()
 
             # Send the newsletter email to all subscribers
-            subscribers = Subscriber.objects.all()
+            subscribers = Subscriber.objects.filter(verified=True)
             subject = newsletter.subject
             content = newsletter.content
             sender_email = 'marvcode.co@gmail.com'
