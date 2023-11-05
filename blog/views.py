@@ -2,10 +2,34 @@ from django.shortcuts import render, get_object_or_404, redirect
 from .models import *
 from django.core.mail import send_mail
 from .forms import *
+from django.utils.crypto import get_random_string
 
 # Create your views here.
 
 def home(request):
+    visits = Visits.objects.all()
+    
+    for visits in visits:
+        # if likes.like_num > 1:
+            visits.num += 1
+            visits.save()
+
+    if request.method == 'POST':
+        email = request.POST.get('email')
+        if email:
+            token = get_random_string(32)  # Generate a random verification token
+            subscription = Subscriber(email=email, token=token)
+            subscription.save()
+
+            # Send a verification email
+            subject = 'Verify your subscription for Marvcode-Blog'
+            message = f'Click the following link to verify your subscription: {request.build_absolute_uri("/subscribe/" + token)}'
+            from_email = 'marvcode.co@email.com'  # Replace with your email
+            recipient_list = [email]
+
+            send_mail(subject, message, from_email, recipient_list)
+
+            return render(request, 'blog/thank_you.html')
     return render(request, 'blog/index.html')
 
 def articles(request):
@@ -85,19 +109,14 @@ def all_html(request, id):
 #     return redirect(request.META['HTTP_REFERER'])
 
 
-def subscribe(request):
-    # get_all_subs = Subscriber.objects.all()
-    sub = Subscriber()
-    sub.email = request.POST.get('email')
-    sub.save()
-    send_mail(
-        'Marvcode Blog',
-        """This is to confirm you just subscribed to marvcode-blog.onrender.com/""",
-        'marvcode.co@gmail.com',
-        [request.POST.get('email')],
-        fail_silently=False,
-    )
-    return redirect("subscription_successful")
+def subscribe(request, token):
+    try:
+        subscription = Subscriber.objects.get(token=token)
+        subscription.verified = True
+        subscription.save()
+        return render(request, 'subscription_successful.html')
+    except Subscriber.DoesNotExist:
+        return render(request, 'blog/index.html')
 
 def subscription_successful(request):
     return render(request, 'blog/subscription_successful.html')

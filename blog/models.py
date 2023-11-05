@@ -192,12 +192,14 @@ class Newsletter(models.Model):
 
 class Subscriber(models.Model):
     email = models.EmailField(unique=True)
+    verified = models.BooleanField(default=False)
+    token = models.CharField(max_length=200)
 
     def __str__(self):
         return self.email
 
-
-
+class Visits(models.Model):
+    num = models.IntegerField(default=0)
 
 
 
