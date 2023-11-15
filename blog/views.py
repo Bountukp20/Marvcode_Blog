@@ -65,7 +65,7 @@ def articles(request):
         html = Html.price()
         discounted_price_html = html / 1.35
     
-    for css in html
+    for css in html:
         css = Css.price()
         discounted_price_css = css / 1.35
     
