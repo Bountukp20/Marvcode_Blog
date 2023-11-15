@@ -87,128 +87,320 @@
     }
 </script>
 <section class="articles">
-    <div class="all-topics">
-        <h2 class="one">HTML</h2>
-        <div class="HTML" id="HTML">
-        {% for html in HTML_Topics %}
-            <div class"topics">
-                <a href="{{ html.get_absolute_url }}" class="link">
-                    <img src="{% static html.link %}">
-                    <h2 class="title">{{ html.title }}</h2>
-                </a>
-            </div>
-        {% endfor %}
-        </div><br>
-        <h2 class="two">Random</h2>
-        <div class="Random" id="Random">
-        {% for random in Random_Topics %}
-            <div class"topics">
-                <a href="#" class="link">
-                    <img src="{{ random.link }}"></img>
-                    <h2 class="title">{{ random.title }}</h2>
-                </a>
-            </div>
-        {% endfor %}
-        </div><br>
-        <h2 class="three">CSS</h2>
-        <div class="CSS" id="CSS">
-        {% for css in Css_Topics %}
-            <div class"topics">
-                <a href="#" class="link">
-                    <img src="{{ css.link }}"></img>
-                    <h2 class="title">{{ css.title }}</h2>
-                </a>
-            </div>
-        {% endfor %}
-        </div><br>
-        <h2 class="four">JavaScript</h2>
-        <div class="JavaScript" id="JavaScript">
-        {% for javascript in JavaScript_Topics %}
-            <div class"topics">
-                <a href="#" class="link">
-                    <img src="{{ javascript.link }}"></img>
-                    <h2 class="title">{{ javascript.title}}</h2>
-                </a>
-            </div>
-        {% endfor %}
-        </div><br>
-        <h2 class="five">BootStrap</h2>
-        <div class="BootStrap" id="BootStrap">
-        {% for BootStrap in BootStrap_Topics %}
-            <div class"topics">
-                <a href="#" class="link">
-                    <img src="{{ BootStrap.link }}"></img>
-                    <h2 class="title">{{ BootStrap.title }}</h2>
-                </a>
-            </div>
-        {% endfor %}
-        </div><br>
-        <h2 class="six">Python</h2>
-        <div class="Python" id="Python">
-        {% for Python in Python_Topics %}
-            <div class"topics">
-                <a href="#" class="link">
-                    <img src="{{ Python.link }}"></img>
-                    <h2 class="title">{{ Python.title }}</h2>
-                </a>
-            </div>
-        {% endfor %}
-        </div><br>
-        <h2 class="seven">Django</h2>
-        <div class="Django" id="Django">
-        {% for Django in Django_Topics %}
-            <div class"topics">
-                <a href="#" class="link">
-                    <img src="{{ Django.link }}"></img>
-                    <h2 class="title">{{ Django.title }}</h2>
-                </a>
-            </div>
-        {% endfor %}
-        </div><br>
-        <h2 class="eight">React</h2>
-        <div class="React" id="React">
-        {% for React in React_Topics %}
-            <div class"topics">
-                <a href="#" class="link">
-                    <img src="{{ React.link }}"></img>
-                    <h2 class="title">{{ React.title }}</h2>
-                </a>
-            </div>
-        {% endfor %}
-        </div><br>
-        <h2 class="eight">MySQL</h2>
-        <div class="React" id="MySQL">
-        {% for MySQL in MySQL_Topics %}
-            <div class"topics">
-                <a href="#" class="link">
-                    <img src="{{ MySQL.link }}"></img>
-                    <h2 class="title">{{ MySQL.title }}</h2>
-                </a>
-            </div>
-        {% endfor %}
-        </div><br>
-        <h2 class="eight">TypeScript</h2>
-        <div class="React" id="TypeScript">
-        {% for TypeScript in TypeScript_Topics %}
-            <div class"topics">
-                <a href="#" class="link">
-                    <img src="{{ TypeScript.link }}"></img>
-                    <h2 class="title">{{ TypeScript.title }}</h2>
-                </a>
-            </div>
-        {% endfor %}
-        </div><br>
-        <h2 class="eight">ML</h2>
-        <div class="React" id="ML">
-        {% for ML in ML_Topics %}
-            <div class"topics">
-                <a href="#" class="link">
-                    <img src="{{ ML.link }}"></img>
-                    <h2 class="title">{{ ML.title }}</h2>
-                </a>
-            </div>
-        {% endfor %}
-        </div><br>
-    </div>
+    {% if user.is_authenticated %}
+        <div class="all-topics">
+            <h2 class="one">HTML</h2>
+            <div class="HTML" id="HTML">
+            {% for html in HTML_free_Topics %}
+                <div class"topics">
+                    <a href="{{ html.get_absolute_url }}" class="link">
+                        <img src="{% static html.link %}">
+                        <h2 class="title">{{ html.title }}</h2>
+                        {% if html.price > 0 %}
+                            <h4 class="price">&#8358;{{ html.price / 35% }}</h4>
+                        {% endif %}
+                    </a>
+                </div>
+            {% endfor %}
+            </div><br>
+            <h2 class="two">Random</h2>
+            <div class="Random" id="Random">
+            {% for random in Random_free_Topics %}
+                <div class"topics">
+                    <a href="#" class="link">
+                        <img src="{{ random.link }}"></img>
+                        <h2 class="title">{{ random.title }}</h2>
+                        {% if random.price > 0 %}
+                            <h4 class="price">&#8358;{{ random.price / 35% }}</h4>
+                        {% endif %}
+                    </a>
+                </div>
+            {% endfor %}
+            </div><br>
+            <h2 class="three">CSS</h2>
+            <div class="CSS" id="CSS">
+            {% for css in Css_free_Topics %}
+                <div class"topics">
+                    <a href="#" class="link">
+                        <img src="{{ css.link }}"></img>
+                        <h2 class="title">{{ css.title }}</h2>
+                        {% if css.price > 0 %}
+                            <h4 class="price">&#8358;{{ css.price / 35% }}</h4>
+                        {% endif %}
+                    </a>
+                </div>
+            {% endfor %}
+            </div><br>
+            <h2 class="four">JavaScript</h2>
+            <div class="JavaScript" id="JavaScript">
+            {% for javascript in JavaScript_free_Topics %}
+                <div class"topics">
+                    <a href="#" class="link">
+                        <img src="{{ javascript.link }}"></img>
+                        <h2 class="title">{{ javascript.title}}</h2>
+                        {% if javascript.price > 0 %}
+                            <h4 class="price">&#8358;{{ javascript.price / 35% }}</h4>
+                        {% endif %}
+                    </a>
+                </div>
+            {% endfor %}
+            </div><br>
+            <h2 class="five">BootStrap</h2>
+            <div class="BootStrap" id="BootStrap">
+            {% for BootStrap in BootStrap_free_Topics %}
+                <div class"topics">
+                    <a href="#" class="link">
+                        <img src="{{ BootStrap.link }}"></img>
+                        <h2 class="title">{{ BootStrap.title }}</h2>
+                        {% if BootStrap.price > 0 %}
+                            <h4 class="price">&#8358;{{ BootStrap.price / 35% }}</h4>
+                        {% endif %}
+                    </a>
+                </div>
+            {% endfor %}
+            </div><br>
+            <h2 class="six">Python</h2>
+            <div class="Python" id="Python">
+            {% for Python in Python_free_Topics %}
+                <div class"topics">
+                    <a href="#" class="link">
+                        <img src="{{ Python.link }}"></img>
+                        <h2 class="title">{{ Python.title }}</h2>
+                        {% if Python.price > 0 %}
+                            <h4 class="price">&#8358;{{ Python.price / 35% }}</h4>
+                        {% endif %}
+                    </a>
+                </div>
+            {% endfor %}
+            </div><br>
+            <h2 class="seven">Django</h2>
+            <div class="Django" id="Django">
+            {% for Django in Django_free_Topics %}
+                <div class"topics">
+                    <a href="#" class="link">
+                        <img src="{{ Django.link }}"></img>
+                        <h2 class="title">{{ Django.title }}</h2>
+                        {% if Django.price > 0 %}
+                            <h4 class="price">&#8358;{{ Django.price / 35% }}</h4>
+                        {% endif %}
+                    </a>
+                </div>
+            {% endfor %}
+            </div><br>
+            <h2 class="eight">React</h2>
+            <div class="React" id="React">
+            {% for React in React_free_Topics %}
+                <div class"topics">
+                    <a href="#" class="link">
+                        <img src="{{ React.link }}"></img>
+                        <h2 class="title">{{ React.title }}</h2>
+                        {% if React.price > 0 %}
+                            <h4 class="price">&#8358;{{ React.price / 35% }}</h4>
+                        {% endif %}
+                    </a>
+                </div>
+            {% endfor %}
+            </div><br>
+            <h2 class="eight">MySQL</h2>
+            <div class="React" id="MySQL">
+            {% for MySQL in MySQL_free_Topics %}
+                <div class"topics">
+                    <a href="#" class="link">
+                        <img src="{{ MySQL.link }}"></img>
+                        <h2 class="title">{{ MySQL.title }}</h2>
+                        {% if MySQL.price > 0 %}
+                            <h4 class="price">&#8358;{{ MySQL.price / 35% }}</h4>
+                        {% endif %}
+                    </a>
+                </div>
+            {% endfor %}
+            </div><br>
+            <h2 class="eight">TypeScript</h2>
+            <div class="React" id="TypeScript">
+            {% for TypeScript in TypeScript_free_Topics %}
+                <div class"topics">
+                    <a href="#" class="link">
+                        <img src="{{ TypeScript.link }}"></img>
+                        <h2 class="title">{{ TypeScript.title }}</h2>
+                        {% if TypeScript.price > 0 %}
+                            <h4 class="price">&#8358;{{ TypeScript.price / 35% }}</h4>
+                        {% endif %}
+                    </a>
+                </div>
+            {% endfor %}
+            </div><br>
+            <h2 class="eight">ML</h2>
+            <div class="React" id="ML">
+            {% for ML in ML_free_Topics %}
+                <div class"topics">
+                    <a href="#" class="link">
+                        <img src="{{ ML.link }}"></img>
+                        <h2 class="title">{{ ML.title }}</h2>
+                        {% if ML.price > 0 %}
+                            <h4 class="price">&#8358;{{ ML.price / 35% }}</h4>
+                        {% endif %}
+                    </a>
+                </div>
+            {% endfor %}
+            </div><br>
+        </div>
+    {% else %}
+        <div class="all-topics">
+            <h2 class="one">HTML</h2>
+            <div class="HTML" id="HTML">
+            {% for html in HTML_Topics %}
+                <div class"topics">
+                    <a href="{{ html.get_absolute_url }}" class="link">
+                        <img src="{% static html.link %}">
+                        <h2 class="title">{{ html.title }}</h2>
+                        {% if html.price > 0 %}
+                            <h4 class="price">&#8358;{{ html.price }}</h4>
+                        {% endif %}
+                    </a>
+                </div>
+            {% endfor %}
+            </div><br>
+            <h2 class="two">Random</h2>
+            <div class="Random" id="Random">
+            {% for random in Random_Topics %}
+                <div class"topics">
+                    <a href="#" class="link">
+                        <img src="{{ random.link }}"></img>
+                        <h2 class="title">{{ random.title }}</h2>
+                        {% if random.price > 0 %}
+                            <h4 class="price">&#8358;{{ random.price }}</h4>
+                        {% endif %}
+                    </a>
+                </div>
+            {% endfor %}
+            </div><br>
+            <h2 class="three">CSS</h2>
+            <div class="CSS" id="CSS">
+            {% for css in Css_Topics %}
+                <div class"topics">
+                    <a href="#" class="link">
+                        <img src="{{ css.link }}"></img>
+                        <h2 class="title">{{ css.title }}</h2>
+                        {% if css.price > 0 %}
+                            <h4 class="price">&#8358;{{ css.price }}</h4>
+                        {% endif %}
+                    </a>
+                </div>
+            {% endfor %}
+            </div><br>
+            <h2 class="four">JavaScript</h2>
+            <div class="JavaScript" id="JavaScript">
+            {% for javascript in JavaScript_Topics %}
+                <div class"topics">
+                    <a href="#" class="link">
+                        <img src="{{ javascript.link }}"></img>
+                        <h2 class="title">{{ javascript.title}}</h2>
+                        {% if javascript.price > 0 %}
+                            <h4 class="price">&#8358;{{ javascript.price }}</h4>
+                        {% endif %}
+                    </a>
+                </div>
+            {% endfor %}
+            </div><br>
+            <h2 class="five">BootStrap</h2>
+            <div class="BootStrap" id="BootStrap">
+            {% for BootStrap in BootStrap_Topics %}
+                <div class"topics">
+                    <a href="#" class="link">
+                        <img src="{{ BootStrap.link }}"></img>
+                        <h2 class="title">{{ BootStrap.title }}</h2>
+                        {% if BootStrap.price > 0 %}
+                            <h4 class="price">&#8358;{{ BootStrap.price }}</h4>
+                        {% endif %}
+                    </a>
+                </div>
+            {% endfor %}
+            </div><br>
+            <h2 class="six">Python</h2>
+            <div class="Python" id="Python">
+            {% for Python in Python_Topics %}
+                <div class"topics">
+                    <a href="#" class="link">
+                        <img src="{{ Python.link }}"></img>
+                        <h2 class="title">{{ Python.title }}</h2>
+                        {% if Python.price > 0 %}
+                            <h4 class="price">&#8358;{{ Python.price }}</h4>
+                        {% endif %}
+                    </a>
+                </div>
+            {% endfor %}
+            </div><br>
+            <h2 class="seven">Django</h2>
+            <div class="Django" id="Django">
+            {% for Django in Django_Topics %}
+                <div class"topics">
+                    <a href="#" class="link">
+                        <img src="{{ Django.link }}"></img>
+                        <h2 class="title">{{ Django.title }}</h2>
+                        {% if Django.price > 0 %}
+                            <h4 class="price">&#8358;{{ Django.price }}</h4>
+                        {% endif %}
+                    </a>
+                </div>
+            {% endfor %}
+            </div><br>
+            <h2 class="eight">React</h2>
+            <div class="React" id="React">
+            {% for React in React_Topics %}
+                <div class"topics">
+                    <a href="#" class="link">
+                        <img src="{{ React.link }}"></img>
+                        <h2 class="title">{{ React.title }}</h2>
+                        {% if React.price > 0 %}
+                            <h4 class="price">&#8358;{{ React.price }}</h4>
+                        {% endif %}
+                    </a>
+                </div>
+            {% endfor %}
+            </div><br>
+            <h2 class="eight">MySQL</h2>
+            <div class="React" id="MySQL">
+            {% for MySQL in MySQL_Topics %}
+                <div class"topics">
+                    <a href="#" class="link">
+                        <img src="{{ MySQL.link }}"></img>
+                        <h2 class="title">{{ MySQL.title }}</h2>
+                        {% if MySQL.price > 0 %}
+                            <h4 class="price">&#8358;{{ MySQL.price }}</h4>
+                        {% endif %}
+                    </a>
+                </div>
+            {% endfor %}
+            </div><br>
+            <h2 class="eight">TypeScript</h2>
+            <div class="React" id="TypeScript">
+            {% for TypeScript in TypeScript_Topics %}
+                <div class"topics">
+                    <a href="#" class="link">
+                        <img src="{{ TypeScript.link }}"></img>
+                        <h2 class="title">{{ TypeScript.title }}</h2>
+                        {% if TypeScript.price > 0 %}
+                            <h4 class="price">&#8358;{{ TypeScript.price }}</h4>
+                        {% endif %}
+                    </a>
+                </div>
+            {% endfor %}
+            </div><br>
+            <h2 class="eight">ML</h2>
+            <div class="React" id="ML">
+            {% for ML in ML_Topics %}
+                <div class"topics">
+                    <a href="#" class="link">
+                        <img src="{{ ML.link }}"></img>
+                        <h2 class="title">{{ ML.title }}</h2>
+                        {% if ML.price > 0 %}
+                            <h4 class="price">&#8358;{{ ML.price }}</h4>
+                        {% endif %}
+                    </a>
+                </div>
+            {% endfor %}
+            </div><br>
+        </div>
+    {% endif %}
 </section>
 {% endblock %}

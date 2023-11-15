@@ -17,4 +17,4 @@ admin.site.register(ML)
 admin.site.register(TypeScript)
 admin.site.register(Newsletter)
 admin.site.register(Subscriber)
-
+admin.site.register(Visits)

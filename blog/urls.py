@@ -7,6 +7,7 @@ from .views import (
     # decrease_likes
     subscribe,
     create_newsletter,
+    login,
     subscription_successful
 )
 from . import views
@@ -16,6 +17,7 @@ from . import views
 urlpatterns = [
     path("", home, name="home"),
     path("articles", articles, name="articles"),
+    path("login/", login, name="login"),
     path("<int:id>", views.all_html, name="all_html"),
     path('subscription_successful/', views.subscription_successful, name="subscription_successful"),
     path('create/', views.create_newsletter, name="create_newsletter"),
