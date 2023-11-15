@@ -3,8 +3,8 @@ from .models import *
 from django.core.mail import send_mail
 from .forms import *
 from django.utils.crypto import get_random_string
-from django.db.models import Q
-from django.contrib.auth.models import User
+# from django.db.models import Q
+# from django.contrib.auth.models import User
 from django.contrib import auth
 from django.contrib.auth import logout
 from django.contrib.auth.decorators import login_required
@@ -199,7 +199,7 @@ def login(request):
         email = request.POST.get('email')
         subscribers = Subscriber.objects.filter(verified=True)
         user = auth.authenticate(username=request.POST['username'],password = request.POST['password'])
-        if user is not None and Subscribers.email() == email and subscribers:
+        if user is not None and Subscriber.email() == email and subscribers:
             auth.login(request,user)
             return redirect('articles')
         else:
