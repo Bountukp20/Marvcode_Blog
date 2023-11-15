@@ -62,6 +62,28 @@ def articles(request):
     ML_free_Topics = ML.objects.all()
     TypeScript_free_Topics = TypeScript.objects.all()
     
+    html = Html.price()
+    css = Css.price()
+    javascript = JavaScript.price()
+    bootstrap = BootStrap.price()
+    python = Python.price()
+    django = Django.price()
+    react = React.price()
+    mysql = MySQL.price()
+    ml = ML.price()
+    typescript = TypeScript.price()
+    
+    discounted_price_html = html / 1.35
+    discounted_price_css = css / 1.35
+    discounted_price_javascript = javascript / 1.35
+    discounted_price_bootstrap = bootstrap / 1.35
+    discounted_price_python = python / 1.35
+    discounted_price_django = django / 1.35
+    discounted_price_react = react / 1.35
+    discounted_price_mysql = mysql / 1.35
+    discounted_price_ml = ml / 1.35
+    discounted_price_typescript = typescript / 1.35
+    
     context = {}
     context = {
         "Random_Topics": Random_Topics,
