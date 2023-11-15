@@ -28,7 +28,7 @@ def home(request):
 
             # Send a verification email
             subject = 'Verify your subscription for Marvcode-Blog'
-            message = f'This is to confirm your account has been used to subscribe to Marvcode Blog. Here are the login credentials to view the full course/articles and get a 35 percent discount benefit on all paid course. But please click the following link to verify your subscription: {request.build_absolute_uri("/subscribe/" + token)}'
+            message = f'This is to confirm your account has been used to subscribe to Marvcode Blog. But please click the following link to verify your subscription: {request.build_absolute_uri("/subscribe/" + token)}'
             from_email = 'marvcode.co@gmail.com' 
             recipient_list = [email]
 
@@ -61,28 +61,45 @@ def articles(request):
     MySQL_free_Topics = MySQL.objects.all()
     ML_free_Topics = ML.objects.all()
     TypeScript_free_Topics = TypeScript.objects.all()
+    for html in html:
+        html = Html.price()
+        discounted_price_html = html / 1.35
     
-    html = Html.price()
-    css = Css.price()
-    javascript = JavaScript.price()
-    bootstrap = BootStrap.price()
-    python = Python.price()
-    django = Django.price()
-    react = React.price()
-    mysql = MySQL.price()
-    ml = ML.price()
-    typescript = TypeScript.price()
+    for css in html
+        css = Css.price()
+        discounted_price_css = css / 1.35
     
-    discounted_price_html = html / 1.35
-    discounted_price_css = css / 1.35
-    discounted_price_javascript = javascript / 1.35
-    discounted_price_bootstrap = bootstrap / 1.35
-    discounted_price_python = python / 1.35
-    discounted_price_django = django / 1.35
-    discounted_price_react = react / 1.35
-    discounted_price_mysql = mysql / 1.35
-    discounted_price_ml = ml / 1.35
-    discounted_price_typescript = typescript / 1.35
+    for javascript in javascript:
+        javascript = JavaScript.price()
+        discounted_price_javascript = javascript / 1.35
+    
+    for bootstrap in bootstrap:
+        bootstrap = BootStrap.price()
+        discounted_price_bootstrap = bootstrap / 1.35
+    
+    for python in python:
+        python = Python.price()
+        discounted_price_python = python / 1.35
+    
+    for django in django:
+        django = Django.price()
+        discounted_price_django = django / 1.35
+    
+    for react in react:
+        react = React.price()
+        discounted_price_react = react / 1.35
+    
+    for mysql in mysql:
+        mysql = MySQL.price()
+        discounted_price_mysql = mysql / 1.35
+    
+    for ml in ml:
+        ml = ML.price()
+        discounted_price_ml = ml / 1.35
+    
+    for typescript in typescript:
+        typescript = TypeScript.price()
+        discounted_price_typescript = typescript / 1.35
     
     context = {}
     context = {
@@ -108,6 +125,16 @@ def articles(request):
         "MySQL_free_Topics": MySQL_free_Topics,
         "ML_free_Topics": ML_free_Topics,
         "TypeScript_free_Topics": TypeScript_free_Topics,
+        "discounted_price_html": discounted_price_html,
+        "discounted_price_css": discounted_price_css,
+        "discounted_price_javascript": discounted_price_javascript,
+        "discounted_price_bootstrap": discounted_price_bootstrap,
+        "discounted_price_python": discounted_price_python,
+        "discounted_price_django": discounted_price_django,
+        "discounted_price_react": discounted_price_react,
+        "discounted_price_mysql": discounted_price_mysql,
+        "discounted_price_ml": discounted_price_ml,
+        "discounted_price_typescript": discounted_price_typescript,
     }
     return render(request, 'blog/articles.html', context)
     
@@ -165,7 +192,7 @@ def subscribe(request, token):
         subscription.verified = True
         subscription.save()
         subject = 'Successfully Subscribed'
-        message = f'You have successfully subscribed to Marvcod Blog. Here are the login credentials to view the full course/articles and get a 35 percent discount benefit on all paid course: username: RandomUser; password: H5bCmJ9qTVVv8fM; --Remember to use these credentials anytime you go on Marvcode Blog, and do not share this with anyone.'
+        message = f'You have successfully subscribed to Marvcode Blog. Here are the login credentials to view the full course/articles and get a 35 percent discount benefit on all paid course: username: RandomUser; password: H5bCmJ9qTVVv8fM; --Remember to use these credentials anytime you go on Marvcode Blog, and do not share this with anyone.'
         from_email = 'marvcode.co@gmail.com' 
         recipient_list = [subscription.email]
         
