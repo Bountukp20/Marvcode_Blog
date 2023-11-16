@@ -28,7 +28,7 @@ def home(request):
 
             # Send a verification email
             subject = 'Verify your subscription for Marvcode-Blog'
-            message = f'This is to confirm your account has been used to subscribe to Marvcode Blog. But please click the following link to verify your subscription: {request.build_absolute_uri("/subscribe/" + token)}'
+            message = f'This is to confirm your account has been used to subscribe to Marvcode Blog. But please click the following link to verify your subscription: {request.build_absolute_uri("subscribe/" + token)}'
             from_email = 'marvcode.co@gmail.com' 
             recipient_list = [email]
 
@@ -63,34 +63,34 @@ def articles(request):
     TypeScript_free_Topics = TypeScript.objects.all()
 
     html = Html.objects.values_list('price')
-    discounted_price_html = html / 1.35
+    discounted_price_html = (html / 35) * 100
     
     css = Css.objects.values_list('price')
-    discounted_price_css = css / 1.35
+    discounted_price_css = (css / 35) * 100
     
     javascript = JavaScript.objects.values_list('price')
-    discounted_price_javascript = javascript / 1.35
+    discounted_price_javascript = (javascript / 35) * 100
     
     bootstrap = BootStrap.objects.values_list('price')
-    discounted_price_bootstrap = bootstrap / 1.35
+    discounted_price_bootstrap = (bootstrap / 35) * 100
     
     python = Python.objects.values_list('price')
-    discounted_price_python = python / 1.35
+    discounted_price_python = (python / 35) * 100
 
     django = Django.objects.values_list('price')
-    discounted_price_django = django / 1.35
+    discounted_price_django = (django / 35) * 100
 
     react = React.objects.values_list('price')
-    discounted_price_react = react / 1.35
+    discounted_price_react = (react / 35) * 100
 
     mysql = MySQL.objects.values_list('price')
-    discounted_price_mysql = mysql / 1.35
+    discounted_price_mysql = (mysql / 35) * 100
 
     ml = ML.objects.values_list('price')
-    discounted_price_ml = ml / 1.35
+    discounted_price_ml = (ml / 35) * 100
 
     typescript = TypeScript.objects.values_list('price')
-    discounted_price_typescript = typescript / 1.35
+    discounted_price_typescript = (typescript / 35) * 100
     
     context = {}
     context = {
