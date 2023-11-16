@@ -28,7 +28,7 @@ def home(request):
 
             # Send a verification email
             subject = 'Verify your subscription for Marvcode-Blog'
-            message = f'This is to confirm your account has been used to subscribe to Marvcode Blog. But please click the following link to verify your subscription: {request.build_absolute_uri("subscribe/" + token)}'
+            message = f'f'This is to confirm your account has been used to subscribe to Marvcode Blog. But please click the following link to verify your subscription: {request.build_absolute_uri("subscribe/" + token)}'
             from_email = 'marvcode.co@gmail.com' 
             recipient_list = [email]
 
@@ -61,36 +61,7 @@ def articles(request):
     MySQL_free_Topics = MySQL.objects.all()
     ML_free_Topics = ML.objects.all()
     TypeScript_free_Topics = TypeScript.objects.all()
-
-    html = Html.objects.values_list('price')
-    discounted_price_html = (html / 35) * 100
     
-    css = Css.objects.values_list('price')
-    discounted_price_css = (css / 35) * 100
-    
-    javascript = JavaScript.objects.values_list('price')
-    discounted_price_javascript = (javascript / 35) * 100
-    
-    bootstrap = BootStrap.objects.values_list('price')
-    discounted_price_bootstrap = (bootstrap / 35) * 100
-    
-    python = Python.objects.values_list('price')
-    discounted_price_python = (python / 35) * 100
-
-    django = Django.objects.values_list('price')
-    discounted_price_django = (django / 35) * 100
-
-    react = React.objects.values_list('price')
-    discounted_price_react = (react / 35) * 100
-
-    mysql = MySQL.objects.values_list('price')
-    discounted_price_mysql = (mysql / 35) * 100
-
-    ml = ML.objects.values_list('price')
-    discounted_price_ml = (ml / 35) * 100
-
-    typescript = TypeScript.objects.values_list('price')
-    discounted_price_typescript = (typescript / 35) * 100
     
     context = {}
     context = {
@@ -116,16 +87,6 @@ def articles(request):
         "MySQL_free_Topics": MySQL_free_Topics,
         "ML_free_Topics": ML_free_Topics,
         "TypeScript_free_Topics": TypeScript_free_Topics,
-        "discounted_price_html": discounted_price_html,
-        "discounted_price_css": discounted_price_css,
-        "discounted_price_javascript": discounted_price_javascript,
-        "discounted_price_bootstrap": discounted_price_bootstrap,
-        "discounted_price_python": discounted_price_python,
-        "discounted_price_django": discounted_price_django,
-        "discounted_price_react": discounted_price_react,
-        "discounted_price_mysql": discounted_price_mysql,
-        "discounted_price_ml": discounted_price_ml,
-        "discounted_price_typescript": discounted_price_typescript,
     }
     return render(request, 'blog/articles.html', context)
     
@@ -183,12 +144,12 @@ def subscribe(request, token):
         subscription.verified = True
         subscription.save()
         # subject = 'Successfully Subscribed'
-        # message = f'You have successfully subscribed to Marvcode Blog. Here are the login credentials to view the full course/articles and get a 35 percent discount benefit on all paid course: username: RandomUser; password: H5bCmJ9qTVVv8fM; --Remember to use these credentials anytime you go on Marvcode Blog, and do not share this with anyone.'
+        # message = f'You have successfully subscribed to Marvcod Blog. Here are the login credentials to view the full course/articles and get a 35 percent discount benefit on all paid course: username: RandomUser; password: H5bCmJ9qTVVv8fM; --Remember to use these credentials anytime you go on Marvcode Blog, and do not share this with anyone.'
         # from_email = 'marvcode.co@gmail.com' 
         # recipient_list = [subscription.email]
         
         # send_mail(subject, message, from_email, recipient_list)
-        return redirect('subscription_successful')
+        # return render(request, 'blog/subscription_successful.html')
     except Subscriber.DoesNotExist:
         return render(request, 'blog/index.html')
 

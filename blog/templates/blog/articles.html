@@ -97,7 +97,7 @@
                         <img src="{% static html.link %}">
                         <h2 class="title">{{ html.title }}</h2>
                         {% if html.price > 0 %}
-                            <h4 class="price">&#8358;{{ discounted_price_html|floatformat:"2" }}</h4>
+                            <h4 class="price">&#8358;{{ html.price * html.discount }}</h4>
                         {% endif %}
                     </a>
                 </div>
@@ -111,7 +111,7 @@
                         <img src="{{ random.link }}"></img>
                         <h2 class="title">{{ random.title }}</h2>
                         {% if random.price > 0 %}
-                            <h4 class="price">&#8358;{{ discounted_price_random|floatformat:"2" }}</h4>
+                            <h4 class="price">&#8358;{{ random.price * random.discount }}</h4>
                         {% endif %}
                     </a>
                 </div>
@@ -125,7 +125,7 @@
                         <img src="{{ css.link }}"></img>
                         <h2 class="title">{{ css.title }}</h2>
                         {% if css.price > 0 %}
-                            <h4 class="price">&#8358;{{ discounted_price_css|floatformat:"2" }}</h4>
+                            <h4 class="price">&#8358;{{ css.price * css.discount }}</h4>
                         {% endif %}
                     </a>
                 </div>
@@ -139,7 +139,7 @@
                         <img src="{{ javascript.link }}"></img>
                         <h2 class="title">{{ javascript.title}}</h2>
                         {% if javascript.price > 0 %}
-                            <h4 class="price">&#8358;{{ discounted_price_javascript|floatformat:"2" }}</h4>
+                            <h4 class="price">&#8358;{{ javascript.price * javascript.discount }}</h4>
                         {% endif %}
                     </a>
                 </div>
@@ -153,7 +153,7 @@
                         <img src="{{ BootStrap.link }}"></img>
                         <h2 class="title">{{ BootStrap.title }}</h2>
                         {% if BootStrap.price > 0 %}
-                            <h4 class="price">&#8358;{{ discounted_price_bootstrap|floatformat:"2" }}</h4>
+                            <h4 class="price">&#8358;{{ BootStrap.price * BooStrap.discount }}</h4>
                         {% endif %}
                     </a>
                 </div>
@@ -167,7 +167,7 @@
                         <img src="{{ Python.link }}"></img>
                         <h2 class="title">{{ Python.title }}</h2>
                         {% if Python.price > 0 %}
-                            <h4 class="price">&#8358;{{ discounted_price_python|floatformat:"2" }}</h4>
+                            <h4 class="price">&#8358;{{ Python.price * Python.discount }}</h4>
                         {% endif %}
                     </a>
                 </div>
@@ -181,7 +181,7 @@
                         <img src="{{ Django.link }}"></img>
                         <h2 class="title">{{ Django.title }}</h2>
                         {% if Django.price > 0 %}
-                            <h4 class="price">&#8358;{{ discounted_price_django|floatformat:"2" }}</h4>
+                            <h4 class="price">&#8358;{{ Django.price * Django.discount }}</h4>
                         {% endif %}
                     </a>
                 </div>
@@ -195,7 +195,7 @@
                         <img src="{{ React.link }}"></img>
                         <h2 class="title">{{ React.title }}</h2>
                         {% if React.price > 0 %}
-                            <h4 class="price">&#8358;{{ discounted_price_react|floatformat:"2" }}</h4>
+                            <h4 class="price">&#8358;{{ React.price * React.discount }}</h4>
                         {% endif %}
                     </a>
                 </div>
@@ -209,7 +209,7 @@
                         <img src="{{ MySQL.link }}"></img>
                         <h2 class="title">{{ MySQL.title }}</h2>
                         {% if MySQL.price > 0 %}
-                            <h4 class="price">&#8358;{{ discounted_price_mysql|floatformat:"2" }}</h4>
+                            <h4 class="price">&#8358;{{ MySQL.price * MySQL.discount }}</h4>
                         {% endif %}
                     </a>
                 </div>
@@ -223,7 +223,7 @@
                         <img src="{{ TypeScript.link }}"></img>
                         <h2 class="title">{{ TypeScript.title }}</h2>
                         {% if TypeScript.price > 0 %}
-                            <h4 class="price">&#8358;{{ discounted_price_typescript|floatformat:"2" }}</h4>
+                            <h4 class="price">&#8358;{{ TypeScript.price * TypeScript.discount }}</h4>
                         {% endif %}
                     </a>
                 </div>
@@ -237,7 +237,7 @@
                         <img src="{{ ML.link }}"></img>
                         <h2 class="title">{{ ML.title }}</h2>
                         {% if ML.price > 0 %}
-                            <h4 class="price">&#8358;{{ discounted_price_ml|floatformat:"2" }}</h4>
+                            <h4 class="price">&#8358;{{ ML.price|div:0.35 }}</h4>
                         {% endif %}
                     </a>
                 </div>

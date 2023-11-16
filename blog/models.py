@@ -28,6 +28,7 @@ class Html(models.Model):
     price = models.IntegerField(default=0)
     time_stamp = models.DateTimeField(auto_now=True)
     user = models.ForeignKey(User,on_delete=models.CASCADE,null=True, blank=True)
+    discount = models.FloatField(default=0.35)
 
     class Meta:
         verbose_name_plural = "Html"
@@ -47,6 +48,8 @@ class Random(models.Model):
     link_six = models.CharField(max_length=300)
     price = models.IntegerField(default=0)
     time_stamp = models.DateTimeField(auto_now=True)
+    discount = models.FloatField(default=0.35)
+    
     class Meta:
         verbose_name_plural = "Random"
     def __str__(self):
@@ -63,6 +66,8 @@ class Css(models.Model):
     link_six = models.CharField(max_length=300)
     price = models.IntegerField(default=0)
     time_stamp = models.DateTimeField(auto_now=True)
+    discount = models.FloatField(default=0.35)
+    
     class Meta:
         verbose_name_plural = "Css"
     def __str__(self):
@@ -79,6 +84,8 @@ class JavaScript(models.Model):
     link_six = models.CharField(max_length=300)
     price = models.IntegerField(default=0)
     time_stamp = models.DateTimeField(auto_now=True)
+    discount = models.FloatField(default=0.35)
+    
     class Meta:
         verbose_name_plural = "JavaScript"
     def __str__(self):
@@ -95,6 +102,8 @@ class BootStrap(models.Model):
     link_six = models.CharField(max_length=300) 
     price = models.IntegerField(default=0)
     time_stamp = models.DateTimeField(auto_now=True)
+    discount = models.FloatField(default=0.35)
+    
     class Meta:
         verbose_name_plural = "BootStrap"
     def __str__(self):
@@ -111,6 +120,8 @@ class Python(models.Model):
     link_six = models.CharField(max_length=300)
     price = models.IntegerField(default=0)
     time_stamp = models.DateTimeField(auto_now=True)
+    discount = models.FloatField(default=0.35)
+    
     class Meta:
         verbose_name_plural = "Python"
     def __str__(self):
@@ -127,6 +138,8 @@ class Django(models.Model):
     link_six = models.CharField(max_length=300)
     price = models.IntegerField(default=0)
     time_stamp = models.DateTimeField(auto_now=True)
+    discount = models.FloatField(default=0.35)
+    
     class Meta:
         verbose_name_plural = "Django"
     def __str__(self):
@@ -143,6 +156,8 @@ class React(models.Model):
     link_six = models.CharField(max_length=300)
     price = models.IntegerField(default=0)
     time_stamp = models.DateTimeField(auto_now=True)
+    discount = models.FloatField(default=0.35)
+    
     class Meta:
         verbose_name_plural = "React"
     def __str__(self):
@@ -167,6 +182,8 @@ class MySQL(models.Model):
     link_six = models.CharField(max_length=300)
     price = models.IntegerField(default=0)
     time_stamp = models.DateTimeField(auto_now=True)
+    discount = models.FloatField(default=0.35)
+    
     class Meta:
         verbose_name_plural = "MySQL"
     def __str__(self):
@@ -183,6 +200,8 @@ class ML(models.Model):
     link_six = models.CharField(max_length=300)
     price = models.IntegerField(default=0)
     time_stamp = models.DateTimeField(auto_now=True)
+    discount = models.FloatField(default=0.35)
+    
     class Meta:
         verbose_name_plural = "ML"
     def __str__(self):
@@ -199,6 +218,8 @@ class TypeScript(models.Model):
     link_six = models.CharField(max_length=300)
     price = models.IntegerField(default=0)
     time_stamp = models.DateTimeField(auto_now=True)
+    discount = models.FloatField(default=0.35)
+    
     class Meta:
         verbose_name_plural = "TypeScript"
     def __str__(self):
