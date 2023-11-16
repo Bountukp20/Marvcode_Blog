@@ -28,7 +28,7 @@ def home(request):
 
             # Send a verification email
             subject = 'Verify your subscription for Marvcode-Blog'
-            message = f'f'This is to confirm your account has been used to subscribe to Marvcode Blog. But please click the following link to verify your subscription: {request.build_absolute_uri("subscribe/" + token)}'
+            message = f'This is to confirm your account has been used to subscribe to Marvcode Blog. But please click the following link to verify your subscription: {request.build_absolute_uri("subscribe/" + token)}'
             from_email = 'marvcode.co@gmail.com' 
             recipient_list = [email]
 
