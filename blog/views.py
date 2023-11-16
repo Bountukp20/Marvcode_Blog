@@ -61,45 +61,36 @@ def articles(request):
     MySQL_free_Topics = MySQL.objects.all()
     ML_free_Topics = ML.objects.all()
     TypeScript_free_Topics = TypeScript.objects.all()
-    for html in html:
-        html = Html.price()
-        discounted_price_html = html / 1.35
+
+    html = Html.objects.values_list('price')
+    discounted_price_html = html / 1.35
     
-    for css in html:
-        css = Css.price()
-        discounted_price_css = css / 1.35
+    css = Css.objects.values_list('price')
+    discounted_price_css = css / 1.35
     
-    for javascript in javascript:
-        javascript = JavaScript.price()
-        discounted_price_javascript = javascript / 1.35
+    javascript = JavaScript.objects.values_list('price')
+    discounted_price_javascript = javascript / 1.35
     
-    for bootstrap in bootstrap:
-        bootstrap = BootStrap.price()
-        discounted_price_bootstrap = bootstrap / 1.35
+    bootstrap = BootStrap.objects.values_list('price')
+    discounted_price_bootstrap = bootstrap / 1.35
     
-    for python in python:
-        python = Python.price()
-        discounted_price_python = python / 1.35
-    
-    for django in django:
-        django = Django.price()
-        discounted_price_django = django / 1.35
-    
-    for react in react:
-        react = React.price()
-        discounted_price_react = react / 1.35
-    
-    for mysql in mysql:
-        mysql = MySQL.price()
-        discounted_price_mysql = mysql / 1.35
-    
-    for ml in ml:
-        ml = ML.price()
-        discounted_price_ml = ml / 1.35
-    
-    for typescript in typescript:
-        typescript = TypeScript.price()
-        discounted_price_typescript = typescript / 1.35
+    python = Python.objects.values_list('price')
+    discounted_price_python = python / 1.35
+
+    django = Django.objects.values_list('price')
+    discounted_price_django = django / 1.35
+
+    react = React.objects.values_list('price')
+    discounted_price_react = react / 1.35
+
+    mysql = MySQL.objects.values_list('price')
+    discounted_price_mysql = mysql / 1.35
+
+    ml = ML.objects.values_list('price')
+    discounted_price_ml = ml / 1.35
+
+    typescript = TypeScript.objects.values_list('price')
+    discounted_price_typescript = typescript / 1.35
     
     context = {}
     context = {
@@ -191,13 +182,13 @@ def subscribe(request, token):
         subscription = Subscriber.objects.get(token=token)
         subscription.verified = True
         subscription.save()
-        subject = 'Successfully Subscribed'
-        message = f'You have successfully subscribed to Marvcode Blog. Here are the login credentials to view the full course/articles and get a 35 percent discount benefit on all paid course: username: RandomUser; password: H5bCmJ9qTVVv8fM; --Remember to use these credentials anytime you go on Marvcode Blog, and do not share this with anyone.'
-        from_email = 'marvcode.co@gmail.com' 
-        recipient_list = [subscription.email]
+        # subject = 'Successfully Subscribed'
+        # message = f'You have successfully subscribed to Marvcode Blog. Here are the login credentials to view the full course/articles and get a 35 percent discount benefit on all paid course: username: RandomUser; password: H5bCmJ9qTVVv8fM; --Remember to use these credentials anytime you go on Marvcode Blog, and do not share this with anyone.'
+        # from_email = 'marvcode.co@gmail.com' 
+        # recipient_list = [subscription.email]
         
-        send_mail(subject, message, from_email, recipient_list)
-        return render(request, 'blog/subscription_successful.html')
+        # send_mail(subject, message, from_email, recipient_list)
+        return redirect('subscription_successful')
     except Subscriber.DoesNotExist:
         return render(request, 'blog/index.html')
 
