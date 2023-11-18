@@ -200,7 +200,7 @@ def login(request):
         email = request.POST.get('email')
         subscribers = Subscriber.objects.filter(verified=True)
         user = auth.authenticate(username=request.POST['username'],password = request.POST['password'])
-        if user is not None and Subscriber.email() == email and subscribers:
+        if user is not None and Subscriber(email=email) and subscribers:
             auth.login(request,user)
             return redirect('articles')
         else:
