@@ -97,7 +97,7 @@
                         <img src="{% static html.link %}">
                         <h2 class="title">{{ html.title }}</h2>
                         {% if html.price > 0 %}
-                            <h4 class="price">&#8358;{% widthratio html.price 1 html.discount %}</h4>
+                            <h4 class="price">&#8358;{{ html.line_total }}</h4>
                         {% endif %}
                     </a>
                 </div>
