@@ -29,7 +29,9 @@ class Html(models.Model):
     time_stamp = models.DateTimeField(auto_now=True)
     user = models.ForeignKey(User,on_delete=models.CASCADE,null=True, blank=True)
     discount = models.FloatField(default=0.35)
-
+    
+    def line_total(self):
+        return self.price * self.discount
     class Meta:
         verbose_name_plural = "Html"
     def __str__(self):
@@ -50,6 +52,8 @@ class Random(models.Model):
     time_stamp = models.DateTimeField(auto_now=True)
     discount = models.FloatField(default=0.35)
     
+    def line_total(self):
+        return self.price * self.discount
     class Meta:
         verbose_name_plural = "Random"
     def __str__(self):
@@ -68,6 +72,8 @@ class Css(models.Model):
     time_stamp = models.DateTimeField(auto_now=True)
     discount = models.FloatField(default=0.35)
     
+    def line_total(self):
+        return self.price * self.discount
     class Meta:
         verbose_name_plural = "Css"
     def __str__(self):
@@ -86,6 +92,8 @@ class JavaScript(models.Model):
     time_stamp = models.DateTimeField(auto_now=True)
     discount = models.FloatField(default=0.35)
     
+    def line_total(self):
+        return self.price * self.discount
     class Meta:
         verbose_name_plural = "JavaScript"
     def __str__(self):
@@ -104,6 +112,8 @@ class BootStrap(models.Model):
     time_stamp = models.DateTimeField(auto_now=True)
     discount = models.FloatField(default=0.35)
     
+    def line_total(self):
+        return self.price * self.discount
     class Meta:
         verbose_name_plural = "BootStrap"
     def __str__(self):
@@ -122,6 +132,8 @@ class Python(models.Model):
     time_stamp = models.DateTimeField(auto_now=True)
     discount = models.FloatField(default=0.35)
     
+    def line_total(self):
+        return self.price * self.discount
     class Meta:
         verbose_name_plural = "Python"
     def __str__(self):
@@ -140,6 +152,8 @@ class Django(models.Model):
     time_stamp = models.DateTimeField(auto_now=True)
     discount = models.FloatField(default=0.35)
     
+    def line_total(self):
+        return self.price * self.discount
     class Meta:
         verbose_name_plural = "Django"
     def __str__(self):
@@ -158,6 +172,8 @@ class React(models.Model):
     time_stamp = models.DateTimeField(auto_now=True)
     discount = models.FloatField(default=0.35)
     
+    def line_total(self):
+        return self.price * self.discount
     class Meta:
         verbose_name_plural = "React"
     def __str__(self):
@@ -184,6 +200,8 @@ class MySQL(models.Model):
     time_stamp = models.DateTimeField(auto_now=True)
     discount = models.FloatField(default=0.35)
     
+    def line_total(self):
+        return self.price * self.discount
     class Meta:
         verbose_name_plural = "MySQL"
     def __str__(self):
@@ -202,6 +220,8 @@ class ML(models.Model):
     time_stamp = models.DateTimeField(auto_now=True)
     discount = models.FloatField(default=0.35)
     
+    def line_total(self):
+        return self.price * self.discount
     class Meta:
         verbose_name_plural = "ML"
     def __str__(self):
@@ -220,6 +240,8 @@ class TypeScript(models.Model):
     time_stamp = models.DateTimeField(auto_now=True)
     discount = models.FloatField(default=0.35)
     
+    def line_total(self):
+        return self.price * self.discount
     class Meta:
         verbose_name_plural = "TypeScript"
     def __str__(self):
