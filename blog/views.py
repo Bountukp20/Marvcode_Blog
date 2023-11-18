@@ -28,7 +28,7 @@ def home(request):
 
             # Send a verification email
             subject = 'Verify your subscription for Marvcode-Blog'
-            message = f'This is to confirm your account has been used to subscribe to Marvcode Blog. But please click the following link to verify your subscription: {request.build_absolute_uri("subscribe/" + token)}'
+            message = f'This is to confirm your account has been used to subscribe to Marvcode Blog. But please click the following link to verify your subscription: {request.build_absolute_uri("/subscribe/" + token)}'
             from_email = 'marvcode.co@gmail.com' 
             recipient_list = [email]
 
@@ -143,13 +143,13 @@ def subscribe(request, token):
         subscription = Subscriber.objects.get(token=token)
         subscription.verified = True
         subscription.save()
-        # subject = 'Successfully Subscribed'
-        # message = f'You have successfully subscribed to Marvcod Blog. Here are the login credentials to view the full course/articles and get a 35 percent discount benefit on all paid course: username: RandomUser; password: H5bCmJ9qTVVv8fM; --Remember to use these credentials anytime you go on Marvcode Blog, and do not share this with anyone.'
-        # from_email = 'marvcode.co@gmail.com' 
-        # recipient_list = [subscription.email]
+        subject = 'Successfully Subscribed'
+        message = f'You have successfully subscribed to Marvcode Blog. Here are the login credentials to view the full course/articles and get a 35 percent discount benefit on all paid course: username: RandomUser; password: H5bCmJ9qTVVv8fM; Remember to use these credentials anytime you go on Marvcode Blog, and do not share this with anyone.'
+        from_email = 'marvcode.co@gmail.com' 
+        recipient_list = [subscription.email]
         
-        # send_mail(subject, message, from_email, recipient_list)
-        # return render(request, 'blog/subscription_successful.html')
+        send_mail(subject, message, from_email, recipient_list)
+        return render(request, 'blog/subscription_successful.html')
     except Subscriber.DoesNotExist:
         return render(request, 'blog/index.html')
 

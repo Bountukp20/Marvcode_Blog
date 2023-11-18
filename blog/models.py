@@ -25,7 +25,7 @@ class Html(models.Model):
     link_five = models.CharField(max_length=300)
     link_six = models.CharField(max_length=300)
     like_num = models.IntegerField(default=0)
-    price = models.IntegerField(default=0)
+    price = models.FloatField(default=0)
     time_stamp = models.DateTimeField(auto_now=True)
     user = models.ForeignKey(User,on_delete=models.CASCADE,null=True, blank=True)
     discount = models.FloatField(default=0.35)
@@ -46,7 +46,7 @@ class Random(models.Model):
     link_four = models.CharField(max_length=300)
     link_five = models.CharField(max_length=300)
     link_six = models.CharField(max_length=300)
-    price = models.IntegerField(default=0)
+    price = models.FloatField(default=0)
     time_stamp = models.DateTimeField(auto_now=True)
     discount = models.FloatField(default=0.35)
     
@@ -64,7 +64,7 @@ class Css(models.Model):
     link_four = models.CharField(max_length=300)
     link_five = models.CharField(max_length=300)
     link_six = models.CharField(max_length=300)
-    price = models.IntegerField(default=0)
+    price = models.FloatField(default=0)
     time_stamp = models.DateTimeField(auto_now=True)
     discount = models.FloatField(default=0.35)
     
@@ -82,7 +82,7 @@ class JavaScript(models.Model):
     link_four = models.CharField(max_length=300)
     link_five = models.CharField(max_length=300)
     link_six = models.CharField(max_length=300)
-    price = models.IntegerField(default=0)
+    price = models.FloatField(default=0)
     time_stamp = models.DateTimeField(auto_now=True)
     discount = models.FloatField(default=0.35)
     
@@ -100,7 +100,7 @@ class BootStrap(models.Model):
     link_four = models.CharField(max_length=300)
     link_five = models.CharField(max_length=300)
     link_six = models.CharField(max_length=300) 
-    price = models.IntegerField(default=0)
+    price = models.FloatField(default=0)
     time_stamp = models.DateTimeField(auto_now=True)
     discount = models.FloatField(default=0.35)
     
@@ -118,7 +118,7 @@ class Python(models.Model):
     link_four = models.CharField(max_length=300)
     link_five = models.CharField(max_length=300)
     link_six = models.CharField(max_length=300)
-    price = models.IntegerField(default=0)
+    price = models.FloatField(default=0)
     time_stamp = models.DateTimeField(auto_now=True)
     discount = models.FloatField(default=0.35)
     
@@ -136,7 +136,7 @@ class Django(models.Model):
     link_four = models.CharField(max_length=300)
     link_five = models.CharField(max_length=300)
     link_six = models.CharField(max_length=300)
-    price = models.IntegerField(default=0)
+    price = models.FloatField(default=0)
     time_stamp = models.DateTimeField(auto_now=True)
     discount = models.FloatField(default=0.35)
     
@@ -154,7 +154,7 @@ class React(models.Model):
     link_four = models.CharField(max_length=300)
     link_five = models.CharField(max_length=300)
     link_six = models.CharField(max_length=300)
-    price = models.IntegerField(default=0)
+    price = models.FloatField(default=0)
     time_stamp = models.DateTimeField(auto_now=True)
     discount = models.FloatField(default=0.35)
     
@@ -180,7 +180,7 @@ class MySQL(models.Model):
     link_four = models.CharField(max_length=300)
     link_five = models.CharField(max_length=300)
     link_six = models.CharField(max_length=300)
-    price = models.IntegerField(default=0)
+    price = models.FloatField(default=0)
     time_stamp = models.DateTimeField(auto_now=True)
     discount = models.FloatField(default=0.35)
     
@@ -198,7 +198,7 @@ class ML(models.Model):
     link_four = models.CharField(max_length=300)
     link_five = models.CharField(max_length=300)
     link_six = models.CharField(max_length=300)
-    price = models.IntegerField(default=0)
+    price = models.FloatField(default=0)
     time_stamp = models.DateTimeField(auto_now=True)
     discount = models.FloatField(default=0.35)
     
@@ -216,7 +216,7 @@ class TypeScript(models.Model):
     link_four = models.CharField(max_length=300)
     link_five = models.CharField(max_length=300)
     link_six = models.CharField(max_length=300)
-    price = models.IntegerField(default=0)
+    price = models.FloatField(default=0)
     time_stamp = models.DateTimeField(auto_now=True)
     discount = models.FloatField(default=0.35)
     

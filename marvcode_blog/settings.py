@@ -37,7 +37,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ.get("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['*']
 
@@ -95,11 +95,11 @@ WSGI_APPLICATION = 'marvcode_blog.wsgi.application'
 DATABASES = {
     'default': {  
         'ENGINE': 'django.db.backends.mysql',  
-        'NAME': 'defaultdb',  
-        'USER': 'avnadmin',  
-        'PASSWORD': 'AVNS_-3hOXOmfSyRbxMwJwYH',  
-        'HOST': 'mysql-344306f0-marvcode-blog-database.a.aivencloud.com',  
-        'PORT': '13818',   
+        'NAME': os.environ.get("DB_NAME"),  
+        'USER': os.environ.get("DB_USER"),  
+        'PASSWORD': os.environ.get("DB_PASSWORD"),  
+        'HOST': os.environ.get("DB_HOST"),  
+        'PORT': os.environ.get("DB_PORT"),    
         
         'OPTIONS': {  
             'init_command': "SET sql_mode='STRICT_TRANS_TABLES'"  
