@@ -133,11 +133,19 @@
         <ul id="nav">
             <li>
                 <a href="" class="active">Home</a>
+<<<<<<< HEAD
             </li>
            {% if not user.is_authenticated %}
             <li>
                 <a href="{% url 'login' %}">Login</a>
             </li>
+=======
+            </li>
+           {% if not user.is_authenticated %}
+            <li>
+                <a href="{% url 'login' %}">Login</a>
+            </li>
+>>>>>>> 850e9180c63aaab79a4fa0d10942b125e64781fe
             {% endif %}
             <li class="dropbtn" id="myBtn">More<i class="fa fa-chevron-down" aria-hidden="true"></i></li><br>
             <ul id="myDropdown" class="dropdown-content">
